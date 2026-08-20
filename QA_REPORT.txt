@@ -1,0 +1,60 @@
+KARAASLAN LABS — WEBSITE v1.0 QA REPORT
+
+Automated checks: 50/50 PASS
+
+[PASS] Locked copy 01
+[PASS] Locked copy 02
+[PASS] Locked copy 03
+[PASS] Locked copy 04
+[PASS] Locked copy 05
+[PASS] Locked copy 06
+[PASS] Locked copy 07
+[PASS] Locked copy 08
+[PASS] Locked copy 09
+[PASS] Locked copy 10
+[PASS] Locked copy 11
+[PASS] Locked copy 12
+[PASS] Locked copy 13
+[PASS] Turkish canonical lang
+[PASS] Exactly one H1 — 1
+[PASS] Semantic main
+[PASS] Semantic nav
+[PASS] Skip link
+[PASS] Contact mailto
+[PASS] GüvenCheck CTA exact URL
+[PASS] GitHub exact URL
+[PASS] Canonical URL
+[PASS] Meta description
+[PASS] OpenGraph basics
+[PASS] JSON-LD Organization
+[PASS] Responsive viewport
+[PASS] Reduced motion
+[PASS] Mobile breakpoint
+[PASS] Tablet breakpoint
+[PASS] Inter requested
+[PASS] Palette #0B121D
+[PASS] Palette #2563EB
+[PASS] Palette #334155
+[PASS] Palette #E5E7EB
+[PASS] Palette #F8FAFC
+[PASS] No lorem ipsum
+[PASS] No placeholder string
+[PASS] No fake metrics
+[PASS] No stock/generic AI asset refs
+[PASS] Lazy load product images
+[PASS] All content images have alt
+[PASS] No missing local assets
+[PASS] Approved corporate asset: karaaslan-labs-mark.svg
+[PASS] Approved corporate asset: karaaslan-labs-lockup.svg
+[PASS] Approved corporate asset: karaaslan-labs-lockup-reversed.svg
+[PASS] Approved corporate asset: karaaslan-labs-favicon.svg
+[PASS] Founder product asset: 1.webp
+[PASS] Founder product asset: 3.webp
+[PASS] Founder product asset: 6.webp
+[PASS] Founder product asset: guvencheck-lockup.webp
+
+External destinations manually verified on 2026-08-20:
+- https://guvencheck.vercel.app/ — reachable
+- https://github.com/karaaslanlabs — reachable
+
+Deployment status: NOT DEPLOYED. Founder approval required before replacing live website.
