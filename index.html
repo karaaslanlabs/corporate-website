@@ -33,7 +33,7 @@
   }
   </script>
   <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=1.1.1" />
   <script defer src="script.js"></script>
 </head>
 <body>
@@ -132,14 +132,14 @@
         </div>
 
         <div class="product-visual reveal" aria-label="GüvenCheck ürün görselleri">
-          <figure class="wide-shot product-proof-frame">
+          <figure class="wide-shot product-proof-frame product-proof-primary">
             <img src="assets/guvencheck/6.webp" alt="GüvenCheck ürün tanıtımı ve risk sonucu ekranı" width="1794" height="876" loading="lazy" decoding="async" />
           </figure>
-          <div class="portrait-shots">
-            <figure class="product-proof-frame">
+          <div class="portrait-shots" aria-label="Destekleyici GüvenCheck ürün görselleri">
+            <figure class="product-proof-frame product-proof-supporting">
               <img src="assets/guvencheck/1.webp" alt="GüvenCheck içerik kontrol ekranı" width="941" height="1672" loading="lazy" decoding="async" />
             </figure>
-            <figure class="product-proof-frame">
+            <figure class="product-proof-frame product-proof-supporting">
               <img src="assets/guvencheck/3.webp" alt="GüvenCheck yüksek risk sonuç ekranı" width="941" height="1672" loading="lazy" decoding="async" />
             </figure>
           </div>
@@ -147,7 +147,7 @@
       </div>
     </section>
 
-    <section class="section method" aria-labelledby="method-title">
+    <section class="section method" id="nasil-calisiyoruz" aria-labelledby="method-title">
       <div class="section-geometry geometry-light geometry-right" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="shell">
         <div class="section-heading reveal">
@@ -176,7 +176,6 @@
     </section>
 
     <section class="about-section" id="hakkimizda" aria-labelledby="about-title">
-      <div class="about-mark" aria-hidden="true"><img src="assets/brand/karaaslan-labs-mark.svg" alt="" width="128" height="128" /></div>
       <div class="shell about-grid">
         <div class="about-title reveal">
           <p class="eyebrow">Karaaslan Labs</p>
