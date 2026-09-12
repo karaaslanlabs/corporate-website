@@ -1,14 +1,15 @@
-# Karaaslan Labs — Corporate Website v1.0
+# Karaaslan Labs — Corporate Website v1.1
 
-Production-ready static build for the Phase 0 Karaaslan Labs corporate website.
+Current static source for the live Karaaslan Labs corporate website. Public positioning remains: **AI-native product company building useful, trustworthy and scalable digital products**.
 
 ## Status
 
-- Build: complete
-- Automated QA: 50/50 PASS
-- Language: Turkish canonical
-- Production deployment: **not performed**
-- Founder approval: required before replacing the live site
+- Main production site: **LIVE** at `https://karaaslanlabs.com/`
+- Current delivery path: **GitHub → Cloudflare Pages → karaaslanlabs.com**
+- Language: **Turkish canonical / Türkiye-first**
+- Homepage positioning: aligned with current Karaaslan Labs company identity
+- Revenue pilot proof page: live at `/pilot/water-process-radar/` and intentionally `noindex,nofollow`
+- Future public copy/design changes and production releases remain Founder-gated
 
 ## Stack
 
@@ -47,11 +48,13 @@ Then open `http://localhost:8080`.
 
 ## Deployment governance
 
-This build does **not** change Squarespace, hosting, DNS, domain registration, or corporate email configuration.
+The accepted production delivery architecture is:
 
-The current Squarespace site cannot simply be replaced by uploading this folder as a custom Squarespace 7.1 template. A deployment method must therefore be selected before production:
+`GitHub main → Cloudflare Pages → karaaslanlabs.com`
 
-1. Re-implement the approved build inside Squarespace using supported page blocks/custom code; or
-2. Approve a hosting/platform change for this static build and update only the required web DNS records.
+This repository is the code source of truth for the public corporate website. Brand/copy authority remains in the Karaaslan Labs Brand canonical workspace; the hosting provider is not Brand authority.
 
-See `PLATFORM_DECISION.md`.
+- Use feature branch + pull request; do not push directly to `main`.
+- Material visual/copy changes require Founder review.
+- Production-impacting changes retain the Founder production gate.
+- DNS, domain registration, and corporate email configuration are separate infrastructure concerns and must not be changed incidentally during website work.
