@@ -65,3 +65,30 @@ if (reducedMotion) {
 
   document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
 }
+
+
+const hero = document.querySelector('.hero');
+const systemFrame = document.querySelector('.system-frame');
+const finePointer = window.matchMedia('(pointer: fine)').matches;
+
+if (!reducedMotion && finePointer && hero) {
+  hero.addEventListener('pointermove', (event) => {
+    const rect = hero.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    hero.style.setProperty('--pointer-x', `${x.toFixed(2)}%`);
+    hero.style.setProperty('--pointer-y', `${y.toFixed(2)}%`);
+
+    if (systemFrame) {
+      const cx = event.clientX / window.innerWidth - 0.5;
+      const cy = event.clientY / window.innerHeight - 0.5;
+      systemFrame.style.transform = `rotateY(${(-5 + cx * 3).toFixed(2)}deg) rotateX(${(2 - cy * 3).toFixed(2)}deg)`;
+    }
+  });
+
+  hero.addEventListener('pointerleave', () => {
+    hero.style.removeProperty('--pointer-x');
+    hero.style.removeProperty('--pointer-y');
+    systemFrame?.style.removeProperty('transform');
+  });
+}
