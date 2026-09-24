@@ -1,60 +1,63 @@
-# Karaaslan Labs — Corporate Website v1.1
+# Karaaslan Labs — Corporate Website v2
 
-Current static source for the live Karaaslan Labs corporate website. Public positioning remains: **AI-native product company building useful, trustworthy and scalable digital products**.
+From-scratch rebuild of the Karaaslan Labs corporate website under Company decisions **KL-DEC-031** and **KL-DEC-032**.
 
-## Status
+## Branch status
 
-- Main production site: **LIVE** at `https://karaaslanlabs.com/`
-- Current delivery path: **GitHub → Cloudflare Pages → karaaslanlabs.com**
+- Implementation branch: `feat/corporate-site-v2-rebuild`
+- Production authority: `main` remains live until Founder G3
+- Live site: https://karaaslanlabs.com/
+- Delivery: **GitHub → Cloudflare Pages → karaaslanlabs.com**
 - Language: **Turkish canonical / Türkiye-first**
-- Homepage positioning: aligned with current Karaaslan Labs company identity
-- Revenue pilot proof page: live at `/pilot/water-process-radar/` and intentionally `noindex,nofollow`
-- Future public copy/design changes and production releases remain Founder-gated
+- Public umbrella: **technology company**
+- Current product proof: **GüvenCheck**
+- Revenue pilot route: `/pilot/water-process-radar/` remains bounded and `noindex,nofollow`
 
-## Stack
+## Architecture
 
-No framework or runtime dependency is required.
+Buildless static-first implementation:
 
-- Semantic HTML
-- CSS
-- Minimal vanilla JavaScript
-- Approved Karaaslan Labs SVG brand assets
-- Founder-provided GüvenCheck product assets, optimized to WebP
+- semantic HTML5
+- modern CSS split into tokens / base / layout / components / motion
+- minimal ES-module JavaScript
+- approved Karaaslan Labs brand assets
+- real GüvenCheck product assets
+- no CMS
+- no database
+- no analytics/cookie layer by default
+- no runtime framework dependency
+
+## Source layout
+
+- `index.html`
+- `styles/tokens.css`
+- `styles/base.css`
+- `styles/layout.css`
+- `styles/components.css`
+- `styles/motion.css`
+- `scripts/main.js`
+- `assets/brand/`
+- `assets/guvencheck/`
+- `assets/meta/`
+- `pilot/water-process-radar/`
+- `404.html`
+- `robots.txt`
+- `sitemap.xml`
+- `_headers`
 
 ## Local preview
 
-From this folder:
-
 ```bash
-python3 -m http.server 8080
+python -m http.server 4173
 ```
 
-Then open `http://localhost:8080`.
+Then open `http://127.0.0.1:4173/`.
 
-## Production files
+## Governance
 
-- `index.html`
-- `styles.css`
-- `script.js`
-- `robots.txt`
-- `sitemap.xml`
-- `assets/`
-
-## Real destinations
-
-- GüvenCheck: https://guvencheck.vercel.app/
-- GitHub: https://github.com/karaaslanlabs
-- Contact: contact@karaaslanlabs.com
-
-## Deployment governance
-
-The accepted production delivery architecture is:
-
-`GitHub main → Cloudflare Pages → karaaslanlabs.com`
-
-This repository is the code source of truth for the public corporate website. Brand/copy authority remains in the Karaaslan Labs Brand canonical workspace; the hosting provider is not Brand authority.
-
-- Use feature branch + pull request; do not push directly to `main`.
-- Material visual/copy changes require Founder review.
-- Production-impacting changes retain the Founder production gate.
-- DNS, domain registration, and corporate email configuration are separate infrastructure concerns and must not be changed incidentally during website work.
+- No direct push to `main`.
+- Feature branch → checks → Cloudflare preview → Founder G2 → Founder G3 → squash merge.
+- Corporate identity remains locked; this rebuild changes positioning, IA, copy, layout, component system and motion.
+- DNS, domain registration and corporate email configuration are out of scope.
+- Public claims remain evidence-bounded; no fake customer, partner, certification, scale or market-leadership claims.
+- Legal/footer entity details require the Legal Fact Gate before production.

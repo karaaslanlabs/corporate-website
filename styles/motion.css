@@ -1,0 +1,59 @@
+.js .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 700ms var(--ease),
+    transform 700ms var(--ease);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.hero-system.is-visible .system-node {
+  animation: node-pulse 3.4s ease-in-out infinite;
+}
+
+.hero-system.is-visible .n2 { animation-delay: .6s; }
+.hero-system.is-visible .n3 { animation-delay: 1.1s; }
+.hero-system.is-visible .n4 { animation-delay: 1.7s; }
+.hero-system.is-visible .n5 { animation-delay: 2.2s; }
+
+.hero-system.is-visible .system-mark {
+  animation: mark-float 7s ease-in-out infinite;
+}
+
+@keyframes node-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 7px rgba(37,99,235,.08);
+    border-color: #87A9FA;
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(37,99,235,.025);
+    border-color: #B8CBFA;
+  }
+}
+
+@keyframes mark-float {
+  0%, 100% { transform: translate(-50%, -50%); }
+  50% { transform: translate(-50%, calc(-50% - 8px)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
