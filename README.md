@@ -32,10 +32,8 @@ Buildless static-first implementation:
 - `index.html`
 - `styles/tokens.css`
 - `styles/base.css`
-- `styles/layout.css`
-- `styles/components.css`
-- `styles/motion.css`
-- `scripts/main.js`
+- `styles/experience.css`
+- `scripts/experience.js`
 - `assets/brand/`
 - `assets/guvencheck/`
 - `assets/meta/`
