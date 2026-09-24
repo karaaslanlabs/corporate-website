@@ -13,6 +13,7 @@ window.addEventListener('scroll', setHeaderState, { passive: true });
 const closeMenu = () => {
   if (!toggle || !nav) return;
   toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-label', 'Menüyü aç');
   nav.classList.remove('is-open');
   header?.classList.remove('is-open');
 };
@@ -21,6 +22,7 @@ toggle?.addEventListener('click', () => {
   if (!nav) return;
   const open = toggle.getAttribute('aria-expanded') === 'true';
   toggle.setAttribute('aria-expanded', String(!open));
+  toggle.setAttribute('aria-label', open ? 'Menüyü aç' : 'Menüyü kapat');
   nav.classList.toggle('is-open', !open);
   header?.classList.toggle('is-open', !open);
 });

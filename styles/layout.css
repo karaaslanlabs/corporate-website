@@ -454,14 +454,20 @@
     backdrop-filter: blur(20px);
     transform: translateY(-140%);
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: transform var(--medium) var(--ease), opacity var(--fast) ease;
+    transition:
+      transform var(--medium) var(--ease),
+      opacity var(--fast) ease,
+      visibility 0s linear var(--medium);
   }
 
   .site-nav.is-open {
     transform: translateY(0);
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
+    transition-delay: 0s;
   }
 
   .site-nav a {
