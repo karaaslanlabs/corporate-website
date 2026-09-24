@@ -3,12 +3,24 @@ const toggle = document.querySelector('[data-menu-toggle]');
 const nav = document.querySelector('[data-nav]');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const setHeaderState = () => {
-  header?.classList.toggle('is-scrolled', window.scrollY > 18);
+let headerScrolled = null;
+let scrollFramePending = false;
+
+const syncHeaderState = () => {
+  const nextScrolled = window.scrollY > 18;
+  if (nextScrolled !== headerScrolled) {
+    headerScrolled = nextScrolled;
+    header?.classList.toggle('is-scrolled', nextScrolled);
+  }
+  scrollFramePending = false;
 };
 
-setHeaderState();
-window.addEventListener('scroll', setHeaderState, { passive: true });
+syncHeaderState();
+window.addEventListener('scroll', () => {
+  if (scrollFramePending) return;
+  scrollFramePending = true;
+  window.requestAnimationFrame(syncHeaderState);
+}, { passive: true });
 
 const closeMenu = () => {
   if (!toggle || !nav) return;

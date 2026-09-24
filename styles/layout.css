@@ -458,8 +458,7 @@
     pointer-events: none;
     transition:
       transform var(--medium) var(--ease),
-      opacity var(--fast) ease,
-      visibility 0s linear var(--medium);
+      opacity var(--fast) ease;
   }
 
   .site-nav.is-open {
@@ -467,7 +466,6 @@
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transition-delay: 0s;
   }
 
   .site-nav a {
