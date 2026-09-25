@@ -2,11 +2,11 @@ import Image from "next/image";
 
 const modules = [
   ["01", "Yazılım Mühendisliği"],
-  ["02", "AI Destekli Araştırma"],
+  ["02", "Yapay Zekâ Destekli Araştırma"],
   ["03", "Otomasyon"],
   ["04", "Orkestrasyon"],
   ["05", "Kanıt Sistemleri"],
-  ["06", "Tekrar Kullanılabilir Kabiliyetler"],
+  ["06", "Yeniden Kullanılabilir Kabiliyetler"],
 ];
 
 export function TechnologySystem() {
@@ -31,9 +31,9 @@ export function TechnologySystem() {
 
       <div className="technology-system__copy">
         <p className="section-code section-code--light">03 / TEKNOLOJİ</p>
-        <h2 id="technology-title">AI-native çalışıyoruz; <span>ama bizi yalnız AI tanımlamıyor.</span></h2>
+        <h2 id="technology-title">Yapay zekâ çalışma biçimimizin doğal bir parçası; <span>ama bizi tek başına tanımlamıyor.</span></h2>
         <p>Yapay zekâ, otomasyon ve yazılım mühendisliğini araştırmadan geliştirmeye, analizden operasyona kadar çalışma biçimimizin doğal bir parçası olarak kullanıyoruz.</p>
-        <p>Otomasyonu yalnız mümkün olduğu için değil, güvenilirliği ve sonucu gerçekten iyileştirdiği yerde genişletiyoruz. İnsan kararı, kontrol ve görünürlük gereken noktalarda korunur.</p>
+        <p>Otomasyonu sırf mümkün olduğu için değil, güvenilirliği ve sonucu gerçekten iyileştirdiği yerde kullanıyoruz. İnsan kararı, kontrolü ve görünürlüğü gereken noktalarda koruyoruz.</p>
       </div>
     </section>
   );

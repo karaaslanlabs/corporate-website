@@ -4,10 +4,10 @@ import { motion, useScroll, useSpring } from "motion/react";
 import { useRef } from "react";
 
 const steps = [
-  ["01", "Problemi Anla", "İhtiyacın, kullanım davranışının, mevcut çözümün ve gerçek sonucun ne olduğunu anlamadan büyük kapsam açmayız."],
+  ["01", "Problemi Anla", "İhtiyacı, kullanım davranışını, mevcut çözümü ve beklenen sonucu anlamadan kapsamı büyütmeyiz."],
   ["02", "Kanıtla", "Varsayımları mümkün olduğunca erken; gerçek kullanım, davranış, maliyet, gelir veya başka somut sinyallerle test ederiz."],
-  ["03", "İnşa Et", "Kanıtlanan ihtiyaca göre sade, sağlam ve geliştirilebilir ürün veya sistem kurarız."],
-  ["04", "Ölç ve Güçlendir", "Çalışan şeyi ölçer, gereksiz karmaşıklığı azaltır ve gerçek kullanımın kanıtladığı kabiliyetleri tekrar kullanılabilir hale getiririz."],
+  ["03", "İnşa Et", "Kanıtlanan ihtiyaca göre sade, sağlam ve geliştirilebilir bir ürün ya da sistem kurarız."],
+  ["04", "Ölç ve Güçlendir", "Çalışan çözümü ölçer, gereksiz karmaşıklığı azaltır ve gerçek kullanımda kanıtlanan kabiliyetleri yeniden kullanılabilir hale getiririz."],
 ];
 
 export function OperatingModel() {
@@ -20,8 +20,8 @@ export function OperatingModel() {
       <div className="section-shell">
         <div className="operating-model__head">
           <p className="section-code">02 / YAKLAŞIM</p>
-          <h2 id="operating-title">Önce doğru problemi bulur, sonra gereken sistemi kurarız.</h2>
-          <p>Teknoloji bizim için amaç değil. Doğru problem, güvenilir çözüm ve sürdürülebilir değer üretmek için kullandığımız araçtır.</p>
+          <h2 id="operating-title">Önce doğru problemi anlarız, sonra gereken sistemi kurarız.</h2>
+          <p>Teknoloji bizim için amaç değil; doğru problemi çözmek, güvenilir sonuç üretmek ve sürdürülebilir değer oluşturmak için kullandığımız bir araçtır.</p>
         </div>
 
         <div className="operating-model__track" aria-hidden="true">

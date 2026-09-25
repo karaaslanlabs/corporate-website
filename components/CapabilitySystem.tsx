@@ -6,27 +6,27 @@ import { useEffect, useRef, useState } from "react";
 const capabilities = [
   {
     index: "01",
-    eyebrow: "PRODUCT / VENTURES",
-    title: "Ürünler & Yeni Girişimler",
-    body: "Gerçek kullanıcı ihtiyacı ve sürdürülebilir iş mantığı taşıyan yeni ürün ve teknoloji girişimlerini araştırır, doğrular ve geliştiririz.",
+    eyebrow: "ÜRÜN / GİRİŞİM",
+    title: "Ürünler ve Yeni Girişimler",
+    body: "Gerçek bir kullanıcı ihtiyacına ve sürdürülebilir bir iş mantığına dayanan yeni ürün ve teknoloji girişimlerini araştırır, doğrular ve geliştiririz.",
   },
   {
     index: "02",
-    eyebrow: "SOFTWARE / SYSTEMS",
-    title: "Yazılım & Sistemler",
-    body: "Bir problemi güvenilir biçimde çözmek için gereken yazılımı, iş akışını ve teknik sistemi en düşük yeterli karmaşıklıkla kurarız.",
+    eyebrow: "YAZILIM / SİSTEM",
+    title: "Yazılım ve Sistemler",
+    body: "Bir problemi güvenilir biçimde çözmek için gereken yazılımı, iş akışını ve teknik sistemi yalnızca gerektiği kadar karmaşık olacak şekilde kurarız.",
   },
   {
     index: "03",
-    eyebrow: "AI / AUTOMATION",
-    title: "AI & Otomasyon",
-    body: "Yapay zekâ ve otomasyonu araştırma, geliştirme, analiz ve operasyon kapasitesini artıran bir kaldıraç olarak kullanırız.",
+    eyebrow: "YAPAY ZEKÂ / OTOMASYON",
+    title: "Yapay Zekâ ve Otomasyon",
+    body: "Yapay zekâ ve otomasyonu; araştırma, geliştirme, analiz ve operasyon kapasitemizi artıran bir kaldıraç olarak kullanırız.",
   },
   {
     index: "04",
-    eyebrow: "RESEARCH / VALIDATION",
-    title: "Araştırma & Doğrulama",
-    body: "Büyük yatırım yapmadan önce problem, kullanıcı, pazar, teknik uygulanabilirlik ve gerçek değer sinyallerini mümkün olduğunca kanıtlarız.",
+    eyebrow: "ARAŞTIRMA / DOĞRULAMA",
+    title: "Araştırma ve Doğrulama",
+    body: "Büyük yatırım yapmadan önce problemi, kullanıcı ihtiyacını, pazarı, teknik uygulanabilirliği ve gerçek değer sinyallerini mümkün olduğunca doğrularız.",
   },
 ];
 
@@ -62,7 +62,7 @@ function CapabilityVisual({ active }: { active: number }) {
 
             {active === 1 && (
               <div className="visual-system-map">
-                <span>INPUT</span><span>LOGIC</span><span>SYSTEM</span><span>OUTPUT</span>
+                <span>GİRDİ</span><span>MANTIK</span><span>SİSTEM</span><span>ÇIKTI</span>
                 <i /><i /><i />
               </div>
             )}
@@ -93,7 +93,7 @@ function CapabilityVisual({ active }: { active: number }) {
         </AnimatePresence>
 
         <div className="capability-visual__status">
-          <span>KL / CAPABILITY SYSTEM</span>
+          <span>KL / KABİLİYET SİSTEMİ</span>
           <b>{capabilities[active].eyebrow}</b>
         </div>
       </div>
@@ -132,12 +132,12 @@ export function CapabilitySystem() {
         <p className="section-code">01 / ÇALIŞMA ALANLARI</p>
         <h2 id="capabilities-title">
           Tek bir kategoriye değil,
-          <span>gerçek probleme bağlıyız.</span>
+          <span>çözmeye değer problemlere odaklanıyoruz.</span>
         </h2>
         <p>
-          Teknolojiyi belirli bir ürün türüne veya sektöre sıkıştırmıyoruz. Problem,
-          ihtiyaç ve ekonomik değer güçlü olduğunda farklı alanlarda çalışabilir;
-          aynı disiplinle araştırır, doğrular ve geliştiririz.
+          Teknolojiyi belirli bir ürün türüne veya sektöre sıkıştırmıyoruz. Gerçek
+          bir ihtiyaç ve güçlü bir değer potansiyeli gördüğümüzde farklı alanlarda
+          çalışabiliriz; her alanı aynı disiplinle araştırır, doğrular ve geliştiririz.
         </p>
       </div>
 

@@ -7,7 +7,7 @@ export function Contact() {
         <div className="section-shell contact-next__grid">
           <div>
             <p className="section-code section-code--light">07 / İLETİŞİM</p>
-            <h2 id="contact-next-title">Ciddi bir problem, teknoloji veya iş birliği üzerinde konuşabiliriz.</h2>
+            <h2 id="contact-next-title">Ciddi bir problem, yeni bir teknoloji girişimi veya iş birliği üzerine konuşabiliriz.</h2>
           </div>
 
           <div className="contact-next__side">

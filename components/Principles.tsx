@@ -1,8 +1,8 @@
 const principles = [
-  ["01", "Kanıtlamadan ölçeklemeyiz", "Büyümeyi heyecanın değil, gerçek kullanım ve iş kanıtının üzerine kurmayı tercih ederiz."],
-  ["02", "Gerektiği kadar karmaşık", "İhtiyaç duyulmayan sistemi, özelliği veya altyapıyı sırf mümkün olduğu için eklemeyiz."],
+  ["01", "Kanıtlamadan ölçeklemeyiz", "Büyümeyi heyecana değil, gerçek kullanım ve iş sonuçlarına dayandırmayı tercih ederiz."],
+  ["02", "Yalnızca gerektiği kadar karmaşık", "İhtiyaç duyulmayan sistemi, özelliği veya altyapıyı sırf mümkün olduğu için eklemeyiz."],
   ["03", "Güvenilirlik tasarımın parçasıdır", "Güvenlik, gizlilik, açıklık ve tutarlılığı ürün ve sistem kararlarının tasarım girdisi olarak ele alırız."],
-  ["04", "Her döngüde daha yetenekli", "Gerçek işte kanıtlanan bilgi, altyapı ve çalışma kabiliyetlerini sonraki işleri daha iyi yapmak için biriktiririz."],
+  ["04", "Her döngüde daha yetenekli", "Gerçek işlerde kanıtlanan bilgi, altyapı ve çalışma kabiliyetlerini sonraki işleri daha iyi yapmak için biriktiririz."],
 ];
 
 export function Principles() {

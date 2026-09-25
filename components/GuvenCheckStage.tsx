@@ -20,17 +20,17 @@ export function GuvenCheckStage() {
         <p className="section-code section-code--light">04 / GÜNCEL ÇALIŞMA</p>
         <h2 id="guven-title">GüvenCheck</h2>
         <p className="guven-stage__promise">Şüpheli bir dijital içerik mi gördün? <strong>GüvenCheck’e sor.</strong></p>
-        <p className="guven-stage__description">GüvenCheck; mesaj, bağlantı/URL, internet sitesi, fotoğraf, görsel ve ekran görüntüsü gibi şüpheli dijital içerikleri değerlendirerek riski, nedenini ve şimdi ne yapılabileceğini daha anlaşılır hale getirmeyi amaçlayan Karaaslan Labs ürünüdür.</p>
+        <p className="guven-stage__description">GüvenCheck; mesaj, bağlantı/URL, internet sitesi, fotoğraf, görsel ve ekran görüntüsü gibi şüpheli dijital içerikleri değerlendirir; riski, nedenini ve şimdi ne yapılması gerektiğini daha anlaşılır hale getirmeyi amaçlayan bir Karaaslan Labs ürünüdür.</p>
 
         <div className="guven-stage__sequence" aria-label="GüvenCheck çıktı yapısı">
-          <span>RİSK</span><i /><span>NEDEN</span><i /><span>ŞİMDİ NE YAPMALI</span>
+          <span>RİSK</span><i /><span>NEDEN</span><i /><span>ŞİMDİ NE YAPMALI?</span>
         </div>
 
         <a className="guven-stage__link" href="https://guvencheck.vercel.app/" target="_blank" rel="noopener noreferrer">
           GüvenCheck’i keşfet <span aria-hidden="true">↗</span>
         </a>
 
-        <p className="guven-stage__note">GüvenCheck bugün Karaaslan Labs’ın gerçek ürün çalışmalarından biridir; şirketin çalışabileceği alanların tamamını tanımlamaz.</p>
+        <p className="guven-stage__note">GüvenCheck, Karaaslan Labs’ın bugün üzerinde çalıştığı gerçek ürünlerden biridir; şirketin çalışabileceği alanların tamamını temsil etmez.</p>
       </div>
 
       <div className="guven-stage__screens" aria-label="GüvenCheck ürün görselleri">

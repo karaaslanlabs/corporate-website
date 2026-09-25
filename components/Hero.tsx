@@ -29,10 +29,10 @@ export function Hero() {
             priority
           />
         </div>
-        <span className="hero-next__label hero-next__label--product">PRODUCT</span>
-        <span className="hero-next__label hero-next__label--systems">SYSTEMS</span>
-        <span className="hero-next__label hero-next__label--research">RESEARCH</span>
-        <span className="hero-next__label hero-next__label--automation">AI / AUTOMATION</span>
+        <span className="hero-next__label hero-next__label--product">ÜRÜNLER</span>
+        <span className="hero-next__label hero-next__label--systems">SİSTEMLER</span>
+        <span className="hero-next__label hero-next__label--research">ARAŞTIRMA</span>
+        <span className="hero-next__label hero-next__label--automation">YAPAY ZEKÂ / OTOMASYON</span>
       </div>
 
       <div className="hero-next__content">
@@ -44,7 +44,7 @@ export function Hero() {
         >
           <span>KARAASLAN LABS</span>
           <i />
-          <span>TECHNOLOGY COMPANY</span>
+          <span>TEKNOLOJİ ŞİRKETİ</span>
         </motion.div>
 
         <h1 id="hero-title">
@@ -85,15 +85,15 @@ export function Hero() {
         >
           <p>
             Karaaslan Labs; yazılım, yapay zekâ, otomasyon ve araştırma
-            kabiliyetlerini bir araya getirerek gerçek problemler üzerinde çalışan
+            yetkinliklerini bir araya getirerek gerçek problemler üzerinde çalışan
             bir teknoloji şirketidir. Tek bir ürün, sektör ya da teknoloji
-            trendiyle sınırlı değiliz; değer üretebileceğimiz alanları araştırır,
+            trendiyle sınırlı değiliz. Değer üretebileceğimiz alanları araştırır,
             doğrular ve inşa ederiz.
           </p>
 
           <div className="hero-next__actions">
             <a className="signal-link" href="#alanlar">
-              <span>Sistemi keşfet</span>
+              <span>Nasıl çalıştığımızı keşfet</span>
               <b aria-hidden="true">↘</b>
             </a>
             <a className="signal-link signal-link--muted" href="#guncel-calisma">
@@ -106,7 +106,7 @@ export function Hero() {
 
       <div className="hero-next__scroll" aria-hidden="true">
         <span />
-        <small>SCROLL / EXPLORE</small>
+        <small>KAYDIR / KEŞFET</small>
       </div>
     </section>
   );

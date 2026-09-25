@@ -14,8 +14,8 @@ export function CompanyManifesto() {
 
         <div className="company-manifesto__body">
           <p>Karaaslan Labs, gerçek problemleri teknolojiyle çözen; ürünler, sistemler ve yeni girişimler geliştiren bir teknoloji şirketidir.</p>
-          <p>Bugün yazılım, yapay zekâ, otomasyon, araştırma ve ürün geliştirme kabiliyetlerini birlikte kullanıyoruz. Yarın güçlü bir problem başka bir teknoloji veya sektördeyse, alanı değil prensipleri sabit tutarız.</p>
-          <p>Amacımız daha fazla teknoloji kullanmak değil; daha doğru problemleri seçmek, daha güvenilir çözümler geliştirmek ve her çalışma döngüsünde şirketin üretme kapasitesini artırmaktır.</p>
+          <p>Bugün yazılım, yapay zekâ, otomasyon, araştırma ve ürün geliştirme kabiliyetlerini birlikte kullanıyoruz. Yarın anlamlı bir problem başka bir teknoloji ya da sektörde karşımıza çıkarsa, alanı değil prensiplerimizi sabit tutarız.</p>
+          <p>Amacımız daha fazla teknoloji kullanmak değil; daha doğru problemleri seçmek, daha güvenilir çözümler geliştirmek ve her çalışma döngüsünde üretme kapasitemizi artırmaktır.</p>
         </div>
       </div>
     </section>
