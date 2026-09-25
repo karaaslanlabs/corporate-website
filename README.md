@@ -1,61 +1,59 @@
-# Karaaslan Labs — Corporate Website v2
+# Karaaslan Labs — Corporate Website
 
-From-scratch rebuild of the Karaaslan Labs corporate website under Company decisions **KL-DEC-031** and **KL-DEC-032**.
+Karaaslan Labs kurumsal web sitesi.
 
-## Branch status
+## Current architecture
 
-- Implementation branch: `feat/corporate-site-v2-rebuild`
-- Production authority: `main` remains live until Founder G3
-- Live site: https://karaaslanlabs.com/
-- Delivery: **GitHub → Cloudflare Pages → karaaslanlabs.com**
-- Language: **Turkish canonical / Türkiye-first**
-- Public umbrella: **technology company**
-- Current product proof: **GüvenCheck**
-- Revenue pilot route: `/pilot/water-process-radar/` remains bounded and `noindex,nofollow`
+- Next.js 16 App Router
+- React 19
+- TypeScript
+- Motion
+- Static export for Cloudflare Pages
+- Custom Canvas-based KL Signal Field
+- No CMS
+- No database
+- No analytics/cookie layer by default
 
-## Architecture
+## Brand baseline
 
-Buildless static-first implementation:
-
-- semantic HTML5
-- modern CSS split into tokens / base / layout / components / motion
-- minimal ES-module JavaScript
-- approved Karaaslan Labs brand assets
-- real GüvenCheck product assets
-- no CMS
-- no database
-- no analytics/cookie layer by default
-- no runtime framework dependency
+- Inter
+- #0B121D
+- #2563EB
+- #334155
+- #E5E7EB
+- #F8FAFC
+- approved Structural KL assets only
 
 ## Source layout
 
-- `index.html`
-- `styles/tokens.css`
-- `styles/base.css`
-- `styles/experience.css`
-- `scripts/experience.js`
-- `assets/brand/`
-- `assets/guvencheck/`
-- `assets/meta/`
-- `pilot/water-process-radar/`
-- `404.html`
-- `robots.txt`
-- `sitemap.xml`
-- `_headers`
+- `app/` — routes, metadata and global design system
+- `components/` — interactive React components
+- `public/assets/brand/` — approved brand assets
+- `public/assets/guvencheck/` — real GüvenCheck product proof
+- `public/pilot/water-process-radar/` — preserved bounded pilot
+- `public/_headers` — Cloudflare security headers baseline
+- `public/robots.txt`
+- `public/sitemap.xml`
 
-## Local preview
+## Local development
 
 ```bash
-python -m http.server 4173
+npm install
+npm run dev
 ```
 
-Then open `http://127.0.0.1:4173/`.
+## Production build / static export
+
+```bash
+npm run lint:type
+npm run build
+```
+
+Static output is generated into `out/`.
 
 ## Governance
 
-- No direct push to `main`.
-- Feature branch → checks → Cloudflare preview → Founder G2 → Founder G3 → squash merge.
-- Corporate identity remains locked; this rebuild changes positioning, IA, copy, layout, component system and motion.
-- DNS, domain registration and corporate email configuration are out of scope.
-- Public claims remain evidence-bounded; no fake customer, partner, certification, scale or market-leadership claims.
-- Legal/footer entity details require the Legal Fact Gate before production.
+- Production `main` is not changed without explicit Founder G3.
+- Public claims must pass the Legal Fact Gate.
+- No fake case studies, logos, metrics or product assets.
+- GüvenCheck is a real current product proof, not the full definition of Karaaslan Labs.
