@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -10,22 +10,30 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://karaaslanlabs.com"),
-  title: "Karaaslan Labs — Ürünler, sistemler ve yeni teknoloji girişimleri",
+  title: "Karaaslan Labs — Products, systems and new technology ventures",
   description:
-    "Karaaslan Labs; yazılım, yapay zekâ, otomasyon ve araştırma kabiliyetlerini bir araya getirerek ürünler, sistemler ve yeni teknoloji girişimleri geliştiren bir teknoloji şirketidir.",
+    "Karaaslan Labs is a technology company that brings together software, AI, automation, and research capabilities to build products, systems, and new technology ventures.",
+  alternates: {
+    canonical: "/en/",
+    languages: {
+      "tr-TR": "/",
+      en: "/en/",
+      "x-default": "/",
+    },
+  },
   openGraph: {
     title: "Karaaslan Labs",
-    description: "Ürünler, sistemler ve yeni teknoloji girişimleri geliştiriyoruz.",
-    url: "https://karaaslanlabs.com/",
+    description: "We build products, systems, and new technology ventures.",
+    url: "https://karaaslanlabs.com/en/",
     siteName: "Karaaslan Labs",
-    locale: "tr_TR",
+    locale: "en_US",
     type: "website",
     images: ["/assets/meta/og-karaaslan-labs.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Karaaslan Labs",
-    description: "Ürünler, sistemler ve yeni teknoloji girişimleri geliştiriyoruz.",
+    description: "We build products, systems, and new technology ventures.",
     images: ["/assets/meta/og-karaaslan-labs.png"],
   },
   icons: {
@@ -38,9 +46,11 @@ export const viewport: Viewport = {
   colorScheme: "dark light",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function EnglishRootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="tr" className={inter.variable}>
+    <html lang="en" className={inter.variable}>
       <body>{children}</body>
     </html>
   );

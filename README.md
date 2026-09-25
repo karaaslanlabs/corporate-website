@@ -9,6 +9,9 @@ Karaaslan Labs kurumsal web sitesi.
 - TypeScript
 - Motion
 - Static export for Cloudflare Pages
+- Turkish `/` + English `/en/` routes with manual TR/EN switching
+- Browser-language auto routing to `/en/` for first-time English-language visitors
+- Canonical + hreflang metadata for both languages
 - Custom Canvas-based KL Signal Field
 - No CMS
 - No database

@@ -1,37 +1,106 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion, useScroll, useMotionValueEvent } from "motion/react";
+import type { Locale } from "@/lib/locale";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useReducedMotion,
+  useScroll,
+} from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
-const capabilities = [
-  {
-    index: "01",
-    eyebrow: "ÜRÜN / GİRİŞİM",
-    title: "Ürünler ve Yeni Girişimler",
-    body: "Gerçek bir kullanıcı ihtiyacına ve sürdürülebilir bir iş mantığına dayanan yeni ürün ve teknoloji girişimlerini araştırır, doğrular ve geliştiririz.",
+const capabilityCopy = {
+  tr: {
+    code: "01 / ÇALIŞMA ALANLARI",
+    titleLead: "Tek bir kategoriye değil,",
+    titleStrong: "çözmeye değer problemlere odaklanıyoruz.",
+    intro:
+      "Teknolojiyi belirli bir ürün türüne veya sektöre sıkıştırmıyoruz. Gerçek bir ihtiyaç ve güçlü bir değer potansiyeli gördüğümüzde farklı alanlarda çalışabiliriz; her alanı aynı disiplinle araştırır, doğrular ve geliştiririz.",
+    visualStatus: "KL / KABİLİYET SİSTEMİ",
+    systemLabels: ["GİRDİ", "MANTIK", "SİSTEM", "ÇIKTI"],
+    capabilities: [
+      {
+        index: "01",
+        eyebrow: "ÜRÜN / GİRİŞİM",
+        title: "Ürünler ve Yeni Girişimler",
+        body:
+          "Gerçek bir kullanıcı ihtiyacına ve sürdürülebilir bir iş mantığına dayanan yeni ürün ve teknoloji girişimlerini araştırır, doğrular ve geliştiririz.",
+      },
+      {
+        index: "02",
+        eyebrow: "YAZILIM / SİSTEM",
+        title: "Yazılım ve Sistemler",
+        body:
+          "Bir problemi güvenilir biçimde çözmek için gereken yazılımı, iş akışını ve teknik sistemi yalnızca gerektiği kadar karmaşık olacak şekilde kurarız.",
+      },
+      {
+        index: "03",
+        eyebrow: "YAPAY ZEKÂ / OTOMASYON",
+        title: "Yapay Zekâ ve Otomasyon",
+        body:
+          "Yapay zekâ ve otomasyonu; araştırma, geliştirme, analiz ve operasyon kapasitemizi artıran bir kaldıraç olarak kullanırız.",
+      },
+      {
+        index: "04",
+        eyebrow: "ARAŞTIRMA / DOĞRULAMA",
+        title: "Araştırma ve Doğrulama",
+        body:
+          "Büyük yatırım yapmadan önce problemi, kullanıcı ihtiyacını, pazarı, teknik uygulanabilirliği ve gerçek değer sinyallerini mümkün olduğunca doğrularız.",
+      },
+    ],
   },
-  {
-    index: "02",
-    eyebrow: "YAZILIM / SİSTEM",
-    title: "Yazılım ve Sistemler",
-    body: "Bir problemi güvenilir biçimde çözmek için gereken yazılımı, iş akışını ve teknik sistemi yalnızca gerektiği kadar karmaşık olacak şekilde kurarız.",
+  en: {
+    code: "01 / FOCUS AREAS",
+    titleLead: "We are not tied to a category.",
+    titleStrong: "We focus on problems worth solving.",
+    intro:
+      "We do not confine technology to a particular product type or industry. When we see a real need and strong value potential, we can work across different fields—researching, validating, and building with the same discipline.",
+    visualStatus: "KL / CAPABILITY SYSTEM",
+    systemLabels: ["INPUT", "LOGIC", "SYSTEM", "OUTPUT"],
+    capabilities: [
+      {
+        index: "01",
+        eyebrow: "PRODUCT / VENTURE",
+        title: "Products and New Ventures",
+        body:
+          "We research, validate, and build new products and technology ventures grounded in real user needs and sustainable business logic.",
+      },
+      {
+        index: "02",
+        eyebrow: "SOFTWARE / SYSTEM",
+        title: "Software and Systems",
+        body:
+          "We build the software, workflows, and technical systems required to solve a problem reliably, with no more complexity than the problem actually needs.",
+      },
+      {
+        index: "03",
+        eyebrow: "AI / AUTOMATION",
+        title: "AI and Automation",
+        body:
+          "We use AI and automation as leverage to expand our research, development, analysis, and operational capacity.",
+      },
+      {
+        index: "04",
+        eyebrow: "RESEARCH / VALIDATION",
+        title: "Research and Validation",
+        body:
+          "Before making a large investment, we validate the problem, user need, market, technical feasibility, and signals of real value as far as possible.",
+      },
+    ],
   },
-  {
-    index: "03",
-    eyebrow: "YAPAY ZEKÂ / OTOMASYON",
-    title: "Yapay Zekâ ve Otomasyon",
-    body: "Yapay zekâ ve otomasyonu; araştırma, geliştirme, analiz ve operasyon kapasitemizi artıran bir kaldıraç olarak kullanırız.",
-  },
-  {
-    index: "04",
-    eyebrow: "ARAŞTIRMA / DOĞRULAMA",
-    title: "Araştırma ve Doğrulama",
-    body: "Büyük yatırım yapmadan önce problemi, kullanıcı ihtiyacını, pazarı, teknik uygulanabilirliği ve gerçek değer sinyallerini mümkün olduğunca doğrularız.",
-  },
-];
+} as const;
 
-function CapabilityVisual({ active }: { active: number }) {
+function CapabilityVisual({
+  active,
+  locale,
+}: {
+  active: number;
+  locale: Locale;
+}) {
   const reduce = useReducedMotion();
+  const t = capabilityCopy[locale];
+  const capabilities = t.capabilities;
 
   return (
     <div className={`capability-visual capability-visual--${active + 1}`} aria-hidden="true">
@@ -62,7 +131,7 @@ function CapabilityVisual({ active }: { active: number }) {
 
             {active === 1 && (
               <div className="visual-system-map">
-                <span>GİRDİ</span><span>MANTIK</span><span>SİSTEM</span><span>ÇIKTI</span>
+                {t.systemLabels.map((label) => <span key={label}>{label}</span>)}
                 <i /><i /><i />
               </div>
             )}
@@ -93,7 +162,7 @@ function CapabilityVisual({ active }: { active: number }) {
         </AnimatePresence>
 
         <div className="capability-visual__status">
-          <span>KL / KABİLİYET SİSTEMİ</span>
+          <span>{t.visualStatus}</span>
           <b>{capabilities[active].eyebrow}</b>
         </div>
       </div>
@@ -101,10 +170,11 @@ function CapabilityVisual({ active }: { active: number }) {
   );
 }
 
-export function CapabilitySystem() {
+export function CapabilitySystem({ locale }: { locale: Locale }) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [active, setActive] = useState(0);
   const [compact, setCompact] = useState(false);
+  const t = capabilityCopy[locale];
 
   useEffect(() => {
     const media = window.matchMedia("(max-width: 900px)");
@@ -129,25 +199,21 @@ export function CapabilitySystem() {
   return (
     <section className="capability-system" id="alanlar" ref={sectionRef} aria-labelledby="capabilities-title">
       <div className="capability-system__intro">
-        <p className="section-code">01 / ÇALIŞMA ALANLARI</p>
+        <p className="section-code">{t.code}</p>
         <h2 id="capabilities-title">
-          Tek bir kategoriye değil,
-          <span>çözmeye değer problemlere odaklanıyoruz.</span>
+          {t.titleLead}
+          <span>{t.titleStrong}</span>
         </h2>
-        <p>
-          Teknolojiyi belirli bir ürün türüne veya sektöre sıkıştırmıyoruz. Gerçek
-          bir ihtiyaç ve güçlü bir değer potansiyeli gördüğümüzde farklı alanlarda
-          çalışabiliriz; her alanı aynı disiplinle araştırır, doğrular ve geliştiririz.
-        </p>
+        <p>{t.intro}</p>
       </div>
 
       <div className="capability-system__body">
         <div className="capability-system__visual-column">
-          <CapabilityVisual active={visualActive} />
+          <CapabilityVisual active={visualActive} locale={locale} />
         </div>
 
         <div className="capability-system__steps">
-          {capabilities.map((item, index) => (
+          {t.capabilities.map((item, index) => (
             <article
               key={item.index}
               className={`capability-step ${index === active ? "capability-step--active" : ""}`}
