@@ -56,7 +56,11 @@ Static output is generated into `out/`.
 
 ## Governance
 
-- Production `main` is not changed without explicit Founder G3.
-- Public claims must pass the Legal Fact Gate.
+- Production changes require explicit Founder approval.
+- Public claims must be supported by verifiable facts.
 - No fake case studies, logos, metrics or product assets.
 - GüvenCheck is a real current product proof, not the full definition of Karaaslan Labs.
+
+## Source availability
+
+This repository is public for engineering transparency and review. It does not currently declare an open-source license; treat the code as source-visible rather than open-source unless a license is added later.
