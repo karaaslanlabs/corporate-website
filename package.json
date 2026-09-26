@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint:type": "tsc --noEmit"
+    "lint:type": "tsc --noEmit",
+    "postinstall": "node scripts/cloudflare-postinstall.mjs"
   },
   "dependencies": {
     "motion": "13.4.4",
