@@ -1,7 +1,7 @@
 "use client";
 
 import type { Locale } from "@/lib/locale";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
 const capabilityCopy = {
@@ -222,17 +222,24 @@ function ResearchSurface({ locale }: { locale: Locale }) {
 }
 
 function CapabilityVisual({ active, locale }: { active: number; locale: Locale }) {
-  const reduce = useReducedMotion();
+  const surfaces = [
+    <VentureSurface key="venture" locale={locale} />,
+    <SystemsSurface key="systems" locale={locale} />,
+    <AISurface key="ai" locale={locale} />,
+    <ResearchSurface key="research" locale={locale} />,
+  ];
+
   return (
     <div className="capability-visual">
-      <AnimatePresence mode="wait">
-        <motion.div key={active} className="capability-visual__state" initial={reduce ? false : { opacity: 0, y: 16, scale: .985 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={reduce ? undefined : { opacity: 0, y: -10, scale: 1.01 }} transition={{ duration: .42, ease: [0.22, 1, 0.36, 1] }}>
-          {active === 0 && <VentureSurface locale={locale} />}
-          {active === 1 && <SystemsSurface locale={locale} />}
-          {active === 2 && <AISurface locale={locale} />}
-          {active === 3 && <ResearchSurface locale={locale} />}
-        </motion.div>
-      </AnimatePresence>
+      {surfaces.map((surface, index) => (
+        <div
+          key={index}
+          className={`capability-visual__panel ${index === active ? "is-active" : ""}`}
+          aria-hidden={index === active ? undefined : true}
+        >
+          {surface}
+        </div>
+      ))}
     </div>
   );
 }
@@ -251,16 +258,56 @@ export function CapabilitySystem({ locale }: { locale: Locale }) {
     return () => media.removeEventListener("change", sync);
   }, []);
 
+  const activeRef = useRef(0);
+
   useEffect(() => {
-    if (compact) { setActive(0); return; }
-    const observer = new IntersectionObserver((entries) => {
-      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (!visible) return;
-      const index = Number((visible.target as HTMLElement).dataset.capabilityIndex ?? 0);
-      setActive(index);
-    }, { rootMargin: "-32% 0px -38% 0px", threshold: [0, .15, .35] });
-    stepRefs.current.forEach((step) => step && observer.observe(step));
-    return () => observer.disconnect();
+    if (compact) {
+      activeRef.current = 0;
+      setActive(0);
+      return;
+    }
+
+    let frame = 0;
+    const syncActiveStep = () => {
+      frame = 0;
+      const targetY = window.innerHeight * 0.46;
+      const current = activeRef.current;
+      let bestIndex = current;
+      let bestDistance = Number.POSITIVE_INFINITY;
+      let currentDistance = Number.POSITIVE_INFINITY;
+
+      stepRefs.current.forEach((step, index) => {
+        if (!step) return;
+        const rect = step.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
+        const distance = Math.abs(center - targetY);
+        if (index === current) currentDistance = distance;
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          bestIndex = index;
+        }
+      });
+
+      const hysteresis = 44;
+      if (bestIndex !== current && bestDistance + hysteresis < currentDistance) {
+        activeRef.current = bestIndex;
+        setActive(bestIndex);
+      }
+    };
+
+    const scheduleSync = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(syncActiveStep);
+    };
+
+    syncActiveStep();
+    window.addEventListener("scroll", scheduleSync, { passive: true });
+    window.addEventListener("resize", scheduleSync);
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", scheduleSync);
+      window.removeEventListener("resize", scheduleSync);
+    };
   }, [compact]);
 
   return (
