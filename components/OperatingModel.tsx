@@ -19,13 +19,13 @@ const copy = {
   },
   en: {
     code: "03 / APPROACH",
-    title: "Our working approach",
+    title: "Our approach",
     intro:
-      "We work in four stages: understand the problem and context, validate the key assumptions, develop the appropriate solution, and monitor the results in use.",
+      "We work in four stages: understand the problem and context, validate the key assumptions, develop the appropriate solution, and monitor how it performs in use.",
     steps: [
       ["01", "Understand the problem and context", "We define the need, existing solution, user behavior, and expected outcome."],
       ["02", "Validate assumptions", "We test critical assumptions with usage, behavior, cost, revenue, or other measurable signals."],
-      ["03", "Develop the solution", "We develop the product, software, or system required by the validated need."],
+      ["03", "Develop the solution", "We develop the product, software, or system that addresses the validated need."],
       ["04", "Monitor outcomes", "We monitor usage outcomes and make improvements based on data and observation."],
     ],
   },

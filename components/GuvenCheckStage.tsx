@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import type { Locale } from "@/lib/locale";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
 const copy = {
@@ -11,9 +11,9 @@ const copy = {
     promiseLead: "Şüpheli bir dijital içerik mi gördün?",
     promiseStrong: "GüvenCheck’e sor.",
     description:
-      "GüvenCheck; mesaj, bağlantı/URL, internet sitesi, fotoğraf, görsel ve ekran görüntüsü gibi şüpheli dijital içerikleri değerlendirir; riski, nedenini ve şimdi ne yapılması gerektiğini daha anlaşılır hale getirmeyi amaçlayan bir Karaaslan Labs ürünüdür.",
+      "GüvenCheck, mesaj, bağlantı (URL), internet sitesi, fotoğraf, görsel ve ekran görüntüsü gibi şüpheli dijital içerikleri değerlendirir; riski, nedenini ve izlenebilecek sonraki adımı daha anlaşılır hale getirmeyi amaçlayan bir Karaaslan Labs ürünüdür.",
     sequence: ["RİSK", "NEDEN", "ŞİMDİ NE YAPMALI?"],
-    sequenceLabel: "GüvenCheck çıktı yapısı",
+    sequenceLabel: "GüvenCheck’in çıktı yapısı",
     link: "GüvenCheck’i keşfet",
     note:
       "GüvenCheck, Karaaslan Labs’ın bugün üzerinde çalıştığı gerçek ürünlerden biridir; şirketin çalışabileceği alanların tamamını temsil etmez.",
@@ -24,15 +24,15 @@ const copy = {
   },
   en: {
     code: "01 / CURRENT PRODUCT",
-    promiseLead: "Seen suspicious digital content?",
+    promiseLead: "Have you seen suspicious digital content?",
     promiseStrong: "Ask GüvenCheck.",
     description:
-      "GüvenCheck is a Karaaslan Labs product designed to assess suspicious digital content—including messages, links and URLs, websites, photos, images, and screenshots—and make the risk, the reason behind it, and the next action easier to understand.",
+      "GüvenCheck is a Karaaslan Labs product designed to assess suspicious digital content—including messages, links and URLs, websites, photos, images, and screenshots—and make the risk, the reason for it, and what to do next easier to understand.",
     sequence: ["RISK", "WHY", "WHAT TO DO NEXT"],
     sequenceLabel: "GüvenCheck output structure",
     link: "Explore GüvenCheck",
     note:
-      "GüvenCheck is one of the real products Karaaslan Labs is working on today; it does not define the full range of areas the company may work in.",
+      "GüvenCheck is one of the products Karaaslan Labs is currently developing; it does not represent the full range of areas in which the company may work.",
     altWide: "GüvenCheck risk result screen",
     altA: "GüvenCheck content check screen",
     altB: "GüvenCheck high-risk result screen",
@@ -42,6 +42,7 @@ const copy = {
 
 export function GuvenCheckStage({ locale }: { locale: Locale }) {
   const ref = useRef<HTMLElement | null>(null);
+  const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
@@ -81,18 +82,20 @@ export function GuvenCheckStage({ locale }: { locale: Locale }) {
       </div>
 
       <div className="guven-stage__screens" aria-label={t.screensLabel}>
-        <motion.figure className="guven-stage__screen guven-stage__screen--wide" style={{ y: yB }}>
+        <motion.figure className="guven-stage__screen guven-stage__screen--wide" style={{ y: yB }} initial={reduce ? false : { opacity: 0, scale: .96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, amount: .18 }} transition={{ duration: .7 }}>
           <Image src="/assets/guvencheck/6.webp" alt={t.altWide} width={1794} height={876} />
         </motion.figure>
         <motion.figure
           className="guven-stage__screen guven-stage__screen--phone guven-stage__screen--a"
           style={{ y: yA, rotate: rotateA }}
+          initial={reduce ? false : { opacity: 0, scale: .94 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, amount: .18 }} transition={{ duration: .7, delay: .08 }}
         >
           <Image src="/assets/guvencheck/1.webp" alt={t.altA} width={941} height={1672} />
         </motion.figure>
         <motion.figure
           className="guven-stage__screen guven-stage__screen--phone guven-stage__screen--b"
           style={{ y: yB, rotate: rotateB }}
+          initial={reduce ? false : { opacity: 0, scale: .94 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, amount: .18 }} transition={{ duration: .7, delay: .16 }}
         >
           <Image src="/assets/guvencheck/3.webp" alt={t.altB} width={941} height={1672} />
         </motion.figure>

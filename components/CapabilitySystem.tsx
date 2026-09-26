@@ -2,7 +2,7 @@
 
 import type { Locale } from "@/lib/locale";
 import { motion, useReducedMotion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 const capabilityCopy = {
   tr: {
@@ -11,22 +11,22 @@ const capabilityCopy = {
     titleStrong: "probleme ve ihtiyaca göre şekillenir.",
     intro: "Belirli bir ürün türü veya sektörle sınırlı çalışmıyoruz. Yeni bir alanı değerlendirirken kullanıcı ihtiyacını, teknik uygulanabilirliği, ekonomik yapıyı ve uzun vadeli sürdürülebilirliği birlikte ele alıyoruz.",
     capabilities: [
-      { index: "01", eyebrow: "ÜRÜN / GİRİŞİM", title: "Ürünler ve Yeni Girişimler", body: "Yeni ürün ve teknoloji girişimlerini kullanıcı ihtiyacı, uygulanabilirlik ve sürdürülebilir iş modeli açısından değerlendirir; doğrulanan alanlarda geliştirme yaparız." },
-      { index: "02", eyebrow: "YAZILIM / SİSTEM", title: "Yazılım ve Sistemler", body: "Bir ihtiyacı karşılamak için gereken yazılımı, iş akışını ve teknik altyapıyı kapsam ve güvenilirlik gereksinimlerine göre tasarlarız." },
-      { index: "03", eyebrow: "YAPAY ZEKÂ / OTOMASYON", title: "Yapay Zekâ ve Otomasyon", body: "Yapay zekâ ve otomasyonu araştırma, analiz, geliştirme ve operasyon süreçlerinde uygun olduğu ölçüde kullanırız." },
-      { index: "04", eyebrow: "ARAŞTIRMA / DOĞRULAMA", title: "Araştırma ve Doğrulama", body: "Yeni bir alana yatırım yapmadan önce problem, kullanıcı, pazar ve teknik uygulanabilirlik varsayımlarını mümkün olduğunca erken test ederiz." },
+      { index: "01", eyebrow: "ÜRÜN / GİRİŞİM", title: "Ürünler ve yeni girişimler", body: "Yeni ürün ve teknoloji girişimlerini kullanıcı ihtiyacı, uygulanabilirlik ve sürdürülebilir iş modeli açısından değerlendirir; doğrulanan alanlarda geliştirme yaparız." },
+      { index: "02", eyebrow: "YAZILIM / SİSTEM", title: "Yazılım ve sistemler", body: "Bir ihtiyacı karşılamak için gereken yazılımı, iş akışını ve teknik altyapıyı kapsam ve güvenilirlik gereksinimlerine göre tasarlarız." },
+      { index: "03", eyebrow: "YAPAY ZEKÂ / OTOMASYON", title: "Yapay zekâ ve otomasyon", body: "Yapay zekâ ve otomasyonu araştırma, analiz, geliştirme ve operasyon süreçlerinde uygun olduğu ölçüde kullanırız." },
+      { index: "04", eyebrow: "ARAŞTIRMA / DOĞRULAMA", title: "Araştırma ve doğrulama", body: "Yeni bir alana yatırım yapmadan önce problem, kullanıcı, pazar ve teknik uygulanabilirlik varsayımlarını mümkün olduğunca erken test ederiz." },
     ],
   },
   en: {
     code: "02 / FOCUS AREAS",
     titleLead: "Our focus areas",
     titleStrong: "are shaped by the problem and the need.",
-    intro: "We are not limited to a particular product type or industry. When evaluating a new area, we consider user need, technical feasibility, economics, and long-term sustainability together.",
+    intro: "We are not limited to a particular product type or industry. When evaluating a new area, we consider user need, technical feasibility, economic viability, and long-term sustainability together.",
     capabilities: [
-      { index: "01", eyebrow: "PRODUCT / VENTURE", title: "Products and New Ventures", body: "We evaluate new products and technology ventures in terms of user need, feasibility, and sustainable business logic, and develop them where those assumptions hold." },
-      { index: "02", eyebrow: "SOFTWARE / SYSTEM", title: "Software and Systems", body: "We design the software, workflows, and technical infrastructure required by the scope and reliability needs of the problem." },
-      { index: "03", eyebrow: "AI / AUTOMATION", title: "AI and Automation", body: "We use AI and automation where appropriate in research, analysis, development, and operational processes." },
-      { index: "04", eyebrow: "RESEARCH / VALIDATION", title: "Research and Validation", body: "Before committing significant resources, we test assumptions around the problem, user need, market, and technical feasibility as early as possible." },
+      { index: "01", eyebrow: "PRODUCT / VENTURE", title: "Products and new ventures", body: "We evaluate new products and technology ventures in terms of user need, feasibility, and a sustainable business model, and develop them when those assumptions are validated." },
+      { index: "02", eyebrow: "SOFTWARE / SYSTEM", title: "Software and systems", body: "We design the software, workflows, and technical infrastructure needed to address the problem, based on scope and reliability requirements." },
+      { index: "03", eyebrow: "AI / AUTOMATION", title: "AI and automation", body: "We use AI and automation where appropriate in research, analysis, development, and operational processes." },
+      { index: "04", eyebrow: "RESEARCH / VALIDATION", title: "Research and validation", body: "Before committing significant resources, we test assumptions around the problem, user need, market, and technical feasibility as early as possible." },
     ],
   },
 } as const;
@@ -64,7 +64,7 @@ const visualCopy = {
   en: {
     lab: "KL / HOW WE WORK",
     footer: "ILLUSTRATIVE FLOW",
-    active: "VISUAL FLOW",
+    active: "ACTIVE STAGE",
     venture: {
       mode: "PRODUCT DEVELOPMENT PROCESS",
       stages: ["Define the need", "Validate assumptions", "Develop the solution"],
@@ -81,7 +81,7 @@ const visualCopy = {
       mode: "AI AND AUTOMATION",
       main: ["Input", "Model / system", "Human review", "Output"],
       tools: ["Search", "Analysis", "Rules"],
-      summary: "Input is processed, reviewed where required, and returned as an output.",
+      summary: "Input is processed, reviewed where required, and returned as a result.",
     },
     research: {
       mode: "VALIDATION PROCESS",
@@ -221,13 +221,21 @@ function ResearchSurface({ locale }: { locale: Locale }) {
   );
 }
 
-function CapabilityVisual({ active, locale }: { active: number; locale: Locale }) {
+function CapabilityVisual({ active, locale, staticIndex }: { active: number; locale: Locale; staticIndex?: number }) {
   const surfaces = [
     <VentureSurface key="venture" locale={locale} />,
     <SystemsSurface key="systems" locale={locale} />,
     <AISurface key="ai" locale={locale} />,
     <ResearchSurface key="research" locale={locale} />,
   ];
+
+  if (typeof staticIndex === "number") {
+    return (
+      <div className="capability-visual capability-visual--static">
+        <div className="capability-visual__panel is-active">{surfaces[staticIndex]}</div>
+      </div>
+    );
+  }
 
   return (
     <div className="capability-visual">
@@ -317,9 +325,12 @@ export function CapabilitySystem({ locale }: { locale: Locale }) {
         <div className="capability-system__visual-column"><CapabilityVisual active={compact ? 0 : active} locale={locale} /></div>
         <div className="capability-system__steps">
           {t.capabilities.map((item, index) => (
-            <article key={item.index} ref={(node) => { stepRefs.current[index] = node; }} data-capability-index={index} className={`capability-step ${index === active ? "capability-step--active" : ""}`}>
+            <Fragment key={item.index}>
+              {compact && <div className="capability-step__mobile-visual"><CapabilityVisual active={index} locale={locale} staticIndex={index} /></div>}
+            <article ref={(node) => { stepRefs.current[index] = node; }} data-capability-index={index} className={`capability-step ${index === active ? "capability-step--active" : ""}`}>
               <div className="capability-step__number">{item.index}</div><p className="capability-step__eyebrow">{item.eyebrow}</p><h3>{item.title}</h3><p className="capability-step__body">{item.body}</p><div className="capability-step__rule"><span /></div>
             </article>
+            </Fragment>
           ))}
         </div>
       </div>
