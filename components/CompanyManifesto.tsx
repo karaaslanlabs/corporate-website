@@ -9,8 +9,7 @@ const copy = {
       "Karaaslan Labs, farklı problem alanlarında ürünler, yazılım sistemleri ve teknoloji girişimleri geliştiren bir teknoloji şirketidir.",
     body: [
       "Çalışma alanlarımız tek bir sektörle sınırlı değildir. Yeni bir alanı değerlendirirken kullanıcı ihtiyacını, teknik uygulanabilirliği ve sürdürülebilir iş modelini birlikte ele alırız.",
-      "Bir problem doğrulandığında, çözüm için gerekli teknoloji ve çalışma modelini ihtiyaca göre belirleriz. Gereksiz teknik kapsamdan kaçınır; güvenilir ve sürdürülebilir bir yapı kurmaya odaklanırız.",
-      "GüvenCheck, bugün geliştirdiğimiz ürünlerden biridir. Şirketin ürün ve araştırma portföyü doğrulanan yeni çalışmalarla zaman içinde genişleyecektir.",
+      "Bir problem doğrulandığında, çözüm için gerekli teknoloji ve çalışma modelini ihtiyaca göre belirler; güvenilir ve sürdürülebilir bir yapı geliştirmeye odaklanırız.",
     ],
   },
   en: {
@@ -20,8 +19,7 @@ const copy = {
       "Karaaslan Labs is a technology company that develops products, software systems, and technology ventures across different problem areas.",
     body: [
       "Our work is not limited to a single industry. When evaluating a new area, we consider user need, technical feasibility, and a sustainable business model together.",
-      "Once a problem is validated, we determine the technology and working model required by the solution. We avoid unnecessary technical scope and focus on a reliable, maintainable structure.",
-      "GüvenCheck is one of the products we are developing today. The company’s product and research portfolio will expand over time as new work is validated.",
+      "Once a problem is validated, we determine the technology and working model required by the solution and focus on building a reliable, maintainable structure.",
     ],
   },
 } as const;

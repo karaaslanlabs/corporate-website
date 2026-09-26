@@ -2894,3 +2894,102 @@ section[id] { scroll-margin-top: 80px; }
   .company-story__mark > span { inset: -26px; }
   .company-story__lead { font-size: 19px; }
 }
+
+/* Pre-production optical polish — 2026-09-26 */
+.capability-system__intro h2 {
+  max-width: 860px;
+  font-size: clamp(48px, 5.55vw, 84px);
+  line-height: .93;
+  letter-spacing: -.061em;
+}
+.capability-system__intro > p:last-child {
+  max-width: 510px;
+  line-height: 1.7;
+}
+.story-toolbar span,
+.story-toolbar__status,
+.story-surface__footer {
+  font-size: 9.5px;
+  letter-spacing: .12em;
+}
+.story-toolbar strong { font-size: 15.5px; }
+.visual-stage span,
+.support-node span,
+.research-evidence-stack span,
+.research-decision span { font-size: 10.5px; }
+.ai-story-card strong { font-size: 15.5px; }
+.technology-compact__title h2 {
+  font-size: clamp(46px, 4.8vw, 76px);
+  line-height: .95;
+  letter-spacing: -.057em;
+}
+.company-story {
+  min-height: 72svh;
+  grid-template-columns: .36fr 1fr;
+  gap: clamp(56px, 8vw, 120px);
+  padding: 104px var(--pad);
+}
+.company-story__mark {
+  width: 150px;
+  border-radius: 34px;
+}
+.company-story__mark > span { inset: -32px; }
+.company-story__mark img { width: 74px; }
+.company-story__content { max-width: 980px; }
+.company-story__content h2 {
+  font-size: clamp(52px, 5.4vw, 84px);
+  line-height: .93;
+  letter-spacing: -.061em;
+}
+.company-story__lead {
+  max-width: 760px;
+  margin-top: 26px;
+  font-size: clamp(18px, 1.55vw, 24px);
+  line-height: 1.5;
+}
+.company-story__body {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+.company-story__body p { font-size: 15px; line-height: 1.7; }
+@media (max-width: 900px) {
+  .company-story {
+    grid-template-columns: 1fr;
+    gap: 58px;
+  }
+  .company-story__body { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 620px) {
+  .capability-system__intro h2 { font-size: clamp(44px, 12.2vw, 56px); }
+  .story-toolbar span,
+  .story-toolbar__status,
+  .story-surface__footer { font-size: 8.5px; }
+  .story-toolbar strong { font-size: 13px; }
+  .visual-stage span { font-size: 9px; }
+  .system-story-card strong { font-size: 11px; }
+  .support-node span { font-size: 9px; }
+  .ai-story-card strong { font-size: 10px; }
+  .research-evidence-stack span { font-size: 8.5px; }
+  .research-decision span { font-size: 8px; letter-spacing: .05em; }
+  .company-story { padding: 88px 20px; gap: 50px; }
+  .company-story__mark { width: 112px; border-radius: 26px; }
+  .company-story__mark > span { inset: -22px; }
+  .company-story__mark img { width: 54px; }
+  .company-story__content h2 { font-size: clamp(42px, 12.2vw, 56px); }
+  .company-story__lead { font-size: 18px; }
+  .company-story__body p { font-size: 14.5px; }
+}
+.contact-next {
+  padding: clamp(110px, 9vw, 155px) 0;
+}
+.contact-next h2 {
+  max-width: 860px;
+  font-size: clamp(52px, 5.4vw, 84px);
+  line-height: .93;
+  letter-spacing: -.061em;
+}
+@media (max-width: 620px) {
+  .contact-next { padding: 90px 0; }
+  .contact-next h2 { font-size: clamp(42px, 12.2vw, 56px); }
+}

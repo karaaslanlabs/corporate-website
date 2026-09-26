@@ -46,10 +46,10 @@ export function GuvenCheckStage({ locale }: { locale: Locale }) {
     target: ref,
     offset: ["start end", "end start"],
   });
-  const yA = useTransform(scrollYProgress, [0, 1], [90, -90]);
-  const yB = useTransform(scrollYProgress, [0, 1], [-20, 78]);
-  const rotateA = useTransform(scrollYProgress, [0, 1], [-7, -3]);
-  const rotateB = useTransform(scrollYProgress, [0, 1], [6, 2]);
+  const yA = useTransform(scrollYProgress, [0, 1], [64, -64]);
+  const yB = useTransform(scrollYProgress, [0, 1], [-12, 56]);
+  const rotateA = useTransform(scrollYProgress, [0, 1], [-4.5, -2]);
+  const rotateB = useTransform(scrollYProgress, [0, 1], [4.5, 2]);
   const t = copy[locale];
 
   return (
