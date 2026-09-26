@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /pilot/water-process-radar/
 
 Sitemap: https://karaaslanlabs.com/sitemap.xml

@@ -1,60 +1,62 @@
-# Karaaslan Labs — Corporate Website v1.1
+# Karaaslan Labs — Corporate Website
 
-Current static source for the live Karaaslan Labs corporate website. Public positioning remains: **AI-native product company building useful, trustworthy and scalable digital products**.
+Karaaslan Labs kurumsal web sitesi.
 
-## Status
+## Current architecture
 
-- Main production site: **LIVE** at `https://karaaslanlabs.com/`
-- Current delivery path: **GitHub → Cloudflare Pages → karaaslanlabs.com**
-- Language: **Turkish canonical / Türkiye-first**
-- Homepage positioning: aligned with current Karaaslan Labs company identity
-- Revenue pilot proof page: live at `/pilot/water-process-radar/` and intentionally `noindex,nofollow`
-- Future public copy/design changes and production releases remain Founder-gated
+- Next.js 16 App Router
+- React 19
+- TypeScript
+- Motion
+- Static export for Cloudflare Pages
+- Turkish `/` + English `/en/` routes with manual TR/EN switching
+- Browser-language auto routing to `/en/` for first-time English-language visitors
+- Canonical + hreflang metadata for both languages
+- Custom Canvas-based KL Signal Field
+- No CMS
+- No database
+- No analytics/cookie layer by default
 
-## Stack
+## Brand baseline
 
-No framework or runtime dependency is required.
+- Inter
+- #0B121D
+- #2563EB
+- #334155
+- #E5E7EB
+- #F8FAFC
+- approved Structural KL assets only
 
-- Semantic HTML
-- CSS
-- Minimal vanilla JavaScript
-- Approved Karaaslan Labs SVG brand assets
-- Founder-provided GüvenCheck product assets, optimized to WebP
+## Source layout
 
-## Local preview
+- `app/` — routes, metadata and global design system
+- `components/` — interactive React components
+- `public/assets/brand/` — approved brand assets
+- `public/assets/guvencheck/` — real GüvenCheck product proof
+- `public/pilot/water-process-radar/` — preserved bounded pilot
+- `public/_headers` — Cloudflare security headers baseline
+- `public/robots.txt`
+- `public/sitemap.xml`
 
-From this folder:
+## Local development
 
 ```bash
-python3 -m http.server 8080
+npm install
+npm run dev
 ```
 
-Then open `http://localhost:8080`.
+## Production build / static export
 
-## Production files
+```bash
+npm run lint:type
+npm run build
+```
 
-- `index.html`
-- `styles.css`
-- `script.js`
-- `robots.txt`
-- `sitemap.xml`
-- `assets/`
+Static output is generated into `out/`.
 
-## Real destinations
+## Governance
 
-- GüvenCheck: https://guvencheck.vercel.app/
-- GitHub: https://github.com/karaaslanlabs
-- Contact: contact@karaaslanlabs.com
-
-## Deployment governance
-
-The accepted production delivery architecture is:
-
-`GitHub main → Cloudflare Pages → karaaslanlabs.com`
-
-This repository is the code source of truth for the public corporate website. Brand/copy authority remains in the Karaaslan Labs Brand canonical workspace; the hosting provider is not Brand authority.
-
-- Use feature branch + pull request; do not push directly to `main`.
-- Material visual/copy changes require Founder review.
-- Production-impacting changes retain the Founder production gate.
-- DNS, domain registration, and corporate email configuration are separate infrastructure concerns and must not be changed incidentally during website work.
+- Production `main` is not changed without explicit Founder G3.
+- Public claims must pass the Legal Fact Gate.
+- No fake case studies, logos, metrics or product assets.
+- GüvenCheck is a real current product proof, not the full definition of Karaaslan Labs.
