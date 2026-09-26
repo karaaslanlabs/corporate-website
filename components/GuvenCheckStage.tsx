@@ -11,9 +11,9 @@ const copy = {
     promiseLead: "Şüpheli bir dijital içerik mi gördün?",
     promiseStrong: "GüvenCheck’e sor.",
     description:
-      "GüvenCheck; mesaj, bağlantı/URL, internet sitesi, fotoğraf, görsel ve ekran görüntüsü gibi şüpheli dijital içerikleri değerlendirir; riski, nedenini ve şimdi ne yapılması gerektiğini daha anlaşılır hale getirmeyi amaçlayan bir Karaaslan Labs ürünüdür.",
+      "GüvenCheck, mesaj, bağlantı (URL), internet sitesi, fotoğraf, görsel ve ekran görüntüsü gibi şüpheli dijital içerikleri değerlendirir; riski, nedenini ve izlenebilecek sonraki adımı daha anlaşılır hale getirmeyi amaçlayan bir Karaaslan Labs ürünüdür.",
     sequence: ["RİSK", "NEDEN", "ŞİMDİ NE YAPMALI?"],
-    sequenceLabel: "GüvenCheck çıktı yapısı",
+    sequenceLabel: "GüvenCheck’in çıktı yapısı",
     link: "GüvenCheck’i keşfet",
     note:
       "GüvenCheck, Karaaslan Labs’ın bugün üzerinde çalıştığı gerçek ürünlerden biridir; şirketin çalışabileceği alanların tamamını temsil etmez.",
@@ -24,15 +24,15 @@ const copy = {
   },
   en: {
     code: "01 / CURRENT PRODUCT",
-    promiseLead: "Seen suspicious digital content?",
+    promiseLead: "Have you seen suspicious digital content?",
     promiseStrong: "Ask GüvenCheck.",
     description:
-      "GüvenCheck is a Karaaslan Labs product designed to assess suspicious digital content—including messages, links and URLs, websites, photos, images, and screenshots—and make the risk, the reason behind it, and the next action easier to understand.",
+      "GüvenCheck is a Karaaslan Labs product designed to assess suspicious digital content—including messages, links and URLs, websites, photos, images, and screenshots—and make the risk, the reason for it, and what to do next easier to understand.",
     sequence: ["RISK", "WHY", "WHAT TO DO NEXT"],
     sequenceLabel: "GüvenCheck output structure",
     link: "Explore GüvenCheck",
     note:
-      "GüvenCheck is one of the real products Karaaslan Labs is working on today; it does not define the full range of areas the company may work in.",
+      "GüvenCheck is one of the products Karaaslan Labs is currently developing; it does not represent the full range of areas in which the company may work.",
     altWide: "GüvenCheck risk result screen",
     altA: "GüvenCheck content check screen",
     altB: "GüvenCheck high-risk result screen",

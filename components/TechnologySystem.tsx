@@ -7,24 +7,24 @@ const copy = {
     body:
       "Yazılım, yapay zekâ, otomasyon ve araştırma araçlarını ihtiyaca göre seçeriz. Teknoloji seçiminde güvenilirlik, bakım maliyeti, açıklık ve insan kontrolü gereksinimlerini birlikte değerlendiririz.",
     modules: [
-      "Yazılım Mühendisliği",
-      "Yapay Zekâ",
+      "Yazılım mühendisliği",
+      "Yapay zekâ",
       "Otomasyon",
-      "Araştırma Sistemleri",
-      "Entegrasyon ve Orkestrasyon",
+      "Araştırma sistemleri",
+      "Entegrasyon ve orkestrasyon",
     ],
   },
   en: {
     code: "04 / TECHNOLOGY",
     title: "Our technology approach",
     body:
-      "We select software, AI, automation, and research tools according to the need. Technology choices are evaluated in terms of reliability, maintenance cost, transparency, and requirements for human control.",
+      "We select software, AI, automation, and research tools according to the need. We evaluate technology choices in terms of reliability, maintenance cost, transparency, and the need for human oversight.",
     modules: [
-      "Software Engineering",
-      "Artificial Intelligence",
+      "Software engineering",
+      "Artificial intelligence",
       "Automation",
-      "Research Systems",
-      "Integration and Orchestration",
+      "Research systems",
+      "Integration and orchestration",
     ],
   },
 } as const;

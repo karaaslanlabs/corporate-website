@@ -6,13 +6,13 @@ const copy = {
     code: "07 / İLETİŞİM",
     title: "Karaaslan Labs ile iletişim",
     intro: "Kurumsal iletişim ve iş birliği talepleri için:",
-    footer: "Ürünler · Sistemler · Teknoloji Girişimleri",
+    footer: "Ürünler · Sistemler · Teknoloji girişimleri",
   },
   en: {
     code: "07 / CONTACT",
     title: "Contact Karaaslan Labs",
-    intro: "For corporate enquiries and collaboration requests:",
-    footer: "Products · Systems · Technology Ventures",
+    intro: "For corporate inquiries and collaboration requests:",
+    footer: "Products · Systems · Technology ventures",
   },
 } as const;
 

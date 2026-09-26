@@ -5,13 +5,13 @@ import type { Locale } from "@/lib/locale";
 const copy = {
   tr: {
     code: "404 / KARAASLAN LABS",
-    title: "Bu sayfa sistemde bulunamadı.",
+    title: "Bu sayfa bulunamadı.",
     link: "Ana sayfaya dön",
     href: "/",
   },
   en: {
     code: "404 / KARAASLAN LABS",
-    title: "This page could not be found in the system.",
+    title: "This page could not be found.",
     link: "Return home",
     href: "/en/",
   },

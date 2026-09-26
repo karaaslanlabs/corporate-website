@@ -13,7 +13,7 @@ const copy = {
     labels: ["ÜRÜNLER", "SİSTEMLER", "ARAŞTIRMA", "YAPAY ZEKÂ / OTOMASYON"],
     lines: ["Ürünler, sistemler", "ve teknoloji", "girişimleri geliştiriyoruz."],
     body:
-      "Karaaslan Labs; yazılım, yapay zekâ, otomasyon ve araştırma yetkinliklerini ürün ve sistem geliştirme çalışmalarında bir araya getiren bir teknoloji şirketidir. Çalışma alanlarımız tek bir sektörle sınırlı değildir; yeni alanları kullanıcı ihtiyacı, teknik uygulanabilirlik ve sürdürülebilirlik açısından değerlendiririz.",
+      "Karaaslan Labs; yazılım, yapay zekâ, otomasyon ve araştırma yetkinliklerini ürün ve sistem geliştirme süreçlerinde bir araya getiren bir teknoloji şirketidir. Çalışma alanlarımız tek bir sektörle sınırlı değildir; yeni alanları kullanıcı ihtiyacı, teknik uygulanabilirlik ve sürdürülebilirlik açısından değerlendiririz.",
     primary: "GüvenCheck’i keşfet",
     secondary: "Nasıl çalışıyoruz",
     scroll: "KAYDIR / KEŞFET",

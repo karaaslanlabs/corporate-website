@@ -19,7 +19,7 @@ const copy = {
       "Karaaslan Labs is a technology company that develops products, software systems, and technology ventures across different problem areas.",
     body: [
       "Our work is not limited to a single industry. When evaluating a new area, we consider user need, technical feasibility, and a sustainable business model together.",
-      "Once a problem is validated, we determine the technology and working model required by the solution and focus on building a reliable, maintainable structure.",
+      "Once a problem is validated, we determine the technology and implementation approach needed for the solution and focus on building a reliable, maintainable structure.",
     ],
   },
 } as const;
