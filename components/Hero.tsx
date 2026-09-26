@@ -14,8 +14,8 @@ const copy = {
     lines: ["Ürünler, sistemler", "ve yeni teknoloji", "girişimleri geliştiriyoruz."],
     body:
       "Karaaslan Labs; yazılım, yapay zekâ, otomasyon ve araştırma yetkinliklerini bir araya getirerek gerçek problemler üzerinde çalışan bir teknoloji şirketidir. Tek bir ürün, sektör ya da teknoloji trendiyle sınırlı değiliz. Değer üretebileceğimiz alanları araştırır, doğrular ve inşa ederiz.",
-    primary: "Nasıl çalıştığımızı keşfet",
-    secondary: "Güncel çalışma: GüvenCheck",
+    primary: "GüvenCheck’i keşfet",
+    secondary: "Nasıl çalışıyoruz",
     scroll: "KAYDIR / KEŞFET",
   },
   en: {
@@ -24,8 +24,8 @@ const copy = {
     lines: ["We build products,", "systems and new", "technology ventures."],
     body:
       "Karaaslan Labs is a technology company that brings together software, AI, automation, and research capabilities to work on real problems. We are not defined by a single product, industry, or technology trend. We research, validate, and build where we can create real value.",
-    primary: "Explore how we work",
-    secondary: "Current work: GüvenCheck",
+    primary: "Explore GüvenCheck",
+    secondary: "How we work",
     scroll: "SCROLL / EXPLORE",
   },
 } as const;
@@ -102,11 +102,11 @@ export function Hero({ locale }: { locale: Locale }) {
           <p>{t.body}</p>
 
           <div className="hero-next__actions">
-            <a className="signal-link" href="#alanlar">
+            <a className="signal-link" href="#guncel-calisma">
               <span>{t.primary}</span>
               <b aria-hidden="true">↘</b>
             </a>
-            <a className="signal-link signal-link--muted" href="#guncel-calisma">
+            <a className="signal-link signal-link--muted" href="#yaklasim">
               <span>{t.secondary}</span>
               <b aria-hidden="true">↗</b>
             </a>

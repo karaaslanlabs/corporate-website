@@ -7,10 +7,10 @@ import { useEffect, useState } from "react";
 const labels = {
   tr: {
     links: [
+      ["GüvenCheck", "#guncel-calisma"],
       ["Alanlar", "#alanlar"],
       ["Yaklaşım", "#yaklasim"],
-      ["Teknoloji", "#teknoloji"],
-      ["GüvenCheck", "#guncel-calisma"],
+      ["Şirket", "#sirket"],
     ],
     contact: "İletişim",
     home: "Karaaslan Labs ana sayfa",
@@ -20,10 +20,10 @@ const labels = {
   },
   en: {
     links: [
+      ["GüvenCheck", "#guncel-calisma"],
       ["Focus Areas", "#alanlar"],
       ["Approach", "#yaklasim"],
-      ["Technology", "#teknoloji"],
-      ["GüvenCheck", "#guncel-calisma"],
+      ["Company", "#sirket"],
     ],
     contact: "Contact",
     home: "Karaaslan Labs home",

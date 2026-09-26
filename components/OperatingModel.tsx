@@ -6,7 +6,7 @@ import { useRef } from "react";
 
 const copy = {
   tr: {
-    code: "02 / YAKLAŞIM",
+    code: "03 / YAKLAŞIM",
     title: "Önce doğru problemi anlarız, sonra gereken sistemi kurarız.",
     intro:
       "Teknoloji bizim için amaç değil; doğru problemi çözmek, güvenilir sonuç üretmek ve sürdürülebilir değer oluşturmak için kullandığımız bir araçtır.",
@@ -18,7 +18,7 @@ const copy = {
     ],
   },
   en: {
-    code: "02 / APPROACH",
+    code: "03 / APPROACH",
     title: "We understand the right problem first, then build the system it needs.",
     intro:
       "Technology is not the goal. It is a tool we use to solve the right problem, produce reliable outcomes, and create sustainable value.",

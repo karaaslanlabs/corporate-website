@@ -7,7 +7,7 @@ import { useRef } from "react";
 
 const copy = {
   tr: {
-    code: "04 / GÜNCEL ÇALIŞMA",
+    code: "01 / GÜNCEL ÜRÜN",
     promiseLead: "Şüpheli bir dijital içerik mi gördün?",
     promiseStrong: "GüvenCheck’e sor.",
     description:
@@ -23,7 +23,7 @@ const copy = {
     screensLabel: "GüvenCheck ürün görselleri",
   },
   en: {
-    code: "04 / CURRENT WORK",
+    code: "01 / CURRENT PRODUCT",
     promiseLead: "Seen suspicious digital content?",
     promiseStrong: "Ask GüvenCheck.",
     description:

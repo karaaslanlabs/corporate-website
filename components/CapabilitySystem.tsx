@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 const capabilityCopy = {
   tr: {
-    code: "01 / ÇALIŞMA ALANLARI",
+    code: "02 / ÇALIŞMA ALANLARI",
     titleLead: "Tek bir kategoriye değil,",
     titleStrong: "çözmeye değer problemlere odaklanıyoruz.",
     intro: "Teknolojiyi belirli bir ürün türüne veya sektöre sıkıştırmıyoruz. Gerçek bir ihtiyaç ve güçlü bir değer potansiyeli gördüğümüzde farklı alanlarda çalışabiliriz; her alanı aynı disiplinle araştırır, doğrular ve geliştiririz.",
@@ -18,7 +18,7 @@ const capabilityCopy = {
     ],
   },
   en: {
-    code: "01 / FOCUS AREAS",
+    code: "02 / FOCUS AREAS",
     titleLead: "We are not tied to a category.",
     titleStrong: "We focus on problems worth solving.",
     intro: "We do not confine technology to a particular product type or industry. When we see a real need and strong value potential, we can work across different fields—researching, validating, and building with the same discipline.",

@@ -3,13 +3,13 @@ import type { Locale } from "@/lib/locale";
 
 const copy = {
   tr: {
-    code: "07 / İLETİŞİM",
+    code: "08 / İLETİŞİM",
     title: "Ciddi bir problem, yeni bir teknoloji girişimi veya iş birliği üzerine konuşabiliriz.",
     intro: "Ürünler, yeni teknoloji girişimleri, iş birlikleri ve Karaaslan Labs ile ilgili kurumsal iletişim için:",
     footer: "Ürünler · Sistemler · Yeni Teknoloji Girişimleri",
   },
   en: {
-    code: "07 / CONTACT",
+    code: "08 / CONTACT",
     title: "We can talk about a serious problem, a new technology venture, or a meaningful collaboration.",
     intro: "For products, new technology ventures, collaborations, and corporate communication with Karaaslan Labs:",
     footer: "Products · Systems · New Technology Ventures",

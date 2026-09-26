@@ -3,23 +3,25 @@ import type { Locale } from "@/lib/locale";
 
 const copy = {
   tr: {
-    code: "06 / KARAASLAN LABS",
-    titleLead: "Tek bir ürün, sektör veya teknoloji trendiyle",
-    titleStrong: "tanımlanmıyoruz.",
+    code: "07 / KARAASLAN LABS",
+    title: "Karaaslan Labs neden var?",
+    lead:
+      "Gerçek problemlere odaklanarak ürünler, sistemler ve yeni teknoloji girişimleri geliştirmek için.",
     body: [
-      "Karaaslan Labs, gerçek problemleri teknolojiyle çözen; ürünler, sistemler ve yeni girişimler geliştiren bir teknoloji şirketidir.",
-      "Bugün yazılım, yapay zekâ, otomasyon, araştırma ve ürün geliştirme kabiliyetlerini birlikte kullanıyoruz. Yarın anlamlı bir problem başka bir teknoloji ya da sektörde karşımıza çıkarsa, alanı değil prensiplerimizi sabit tutarız.",
-      "Amacımız daha fazla teknoloji kullanmak değil; daha doğru problemleri seçmek, daha güvenilir çözümler geliştirmek ve her çalışma döngüsünde üretme kapasitemizi artırmaktır.",
+      "Tek bir sektöre bağlı değiliz; yeni bir alana da yalnızca teknoloji ilginç olduğu için girmiyoruz. Önce gerçek ihtiyacı ve değer sinyalini arıyoruz.",
+      "Problem doğrulandığında uygun teknolojiyi, sistemi ve çalışma biçimini kuruyoruz. Gereksiz karmaşıklığı değil, güvenilir sonucu büyütmeye çalışıyoruz.",
+      "Bugün bu yaklaşımın görünür örneklerinden biri GüvenCheck. Karaaslan Labs büyüdükçe bu alan gerçek ürünler, araştırmalar ve açık çalışmalarla genişleyecek.",
     ],
   },
   en: {
-    code: "06 / KARAASLAN LABS",
-    titleLead: "We are not defined by a single product, industry,",
-    titleStrong: "or technology trend.",
+    code: "07 / KARAASLAN LABS",
+    title: "Why does Karaaslan Labs exist?",
+    lead:
+      "To focus on real problems and build products, systems, and new technology ventures around them.",
     body: [
-      "Karaaslan Labs is a technology company that solves real problems through technology and builds products, systems, and new ventures.",
-      "Today we combine software, AI, automation, research, and product development capabilities. If a meaningful problem appears in another technology or industry tomorrow, we keep our principles fixed—not the category.",
-      "Our goal is not to use more technology. It is to choose better problems, build more reliable solutions, and increase the company’s ability to create with every working cycle.",
+      "We are not tied to one industry, but we also do not enter a field simply because the technology is interesting. We look for a real need and a credible value signal first.",
+      "Once the problem is validated, we build the technology, system, and working model it actually needs. The goal is reliable outcomes, not unnecessary complexity.",
+      "GüvenCheck is one visible example of that approach today. As Karaaslan Labs grows, this surface will expand with real products, research, and public work.",
     ],
   },
 } as const;
@@ -28,20 +30,20 @@ export function CompanyManifesto({ locale }: { locale: Locale }) {
   const t = copy[locale];
 
   return (
-    <section className="company-manifesto" id="sirket" aria-labelledby="company-manifesto-title">
-      <div className="company-manifesto__mark" aria-hidden="true">
+    <section className="company-story" id="sirket" aria-labelledby="company-story-title">
+      <div className="company-story__mark" aria-hidden="true">
         <span />
         <Image src="/assets/brand/karaaslan-labs-mark.svg" alt="" width={128} height={128} />
       </div>
-
-      <div className="company-manifesto__content">
+      <div className="company-story__content">
         <p className="section-code section-code--light">{t.code}</p>
-        <h2 id="company-manifesto-title">
-          {t.titleLead} <span>{t.titleStrong}</span>
-        </h2>
+        <h2 id="company-story-title">{t.title}</h2>
+        <p className="company-story__lead">{t.lead}</p>
 
-        <div className="company-manifesto__body">
-          {t.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        <div className="company-story__body">
+          {t.body.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </div>
       </div>
     </section>
