@@ -2,7 +2,7 @@
 
 import type { Locale } from "@/lib/locale";
 import { motion, useReducedMotion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 const capabilityCopy = {
   tr: {
@@ -221,13 +221,21 @@ function ResearchSurface({ locale }: { locale: Locale }) {
   );
 }
 
-function CapabilityVisual({ active, locale }: { active: number; locale: Locale }) {
+function CapabilityVisual({ active, locale, staticIndex }: { active: number; locale: Locale; staticIndex?: number }) {
   const surfaces = [
     <VentureSurface key="venture" locale={locale} />,
     <SystemsSurface key="systems" locale={locale} />,
     <AISurface key="ai" locale={locale} />,
     <ResearchSurface key="research" locale={locale} />,
   ];
+
+  if (typeof staticIndex === "number") {
+    return (
+      <div className="capability-visual capability-visual--static">
+        <div className="capability-visual__panel is-active">{surfaces[staticIndex]}</div>
+      </div>
+    );
+  }
 
   return (
     <div className="capability-visual">
@@ -317,9 +325,12 @@ export function CapabilitySystem({ locale }: { locale: Locale }) {
         <div className="capability-system__visual-column"><CapabilityVisual active={compact ? 0 : active} locale={locale} /></div>
         <div className="capability-system__steps">
           {t.capabilities.map((item, index) => (
-            <article key={item.index} ref={(node) => { stepRefs.current[index] = node; }} data-capability-index={index} className={`capability-step ${index === active ? "capability-step--active" : ""}`}>
+            <Fragment key={item.index}>
+              {compact && <div className="capability-step__mobile-visual"><CapabilityVisual active={index} locale={locale} staticIndex={index} /></div>}
+            <article ref={(node) => { stepRefs.current[index] = node; }} data-capability-index={index} className={`capability-step ${index === active ? "capability-step--active" : ""}`}>
               <div className="capability-step__number">{item.index}</div><p className="capability-step__eyebrow">{item.eyebrow}</p><h3>{item.title}</h3><p className="capability-step__body">{item.body}</p><div className="capability-step__rule"><span /></div>
             </article>
+            </Fragment>
           ))}
         </div>
       </div>

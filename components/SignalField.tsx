@@ -25,6 +25,7 @@ export function SignalField() {
     let width = 0;
     let height = 0;
     let animationFrame = 0;
+    let lastTime = 0;
     let nodes: NodePoint[] = [];
 
     const seedNodes = () => {
@@ -35,8 +36,8 @@ export function SignalField() {
         return {
           x: width * (0.63 + Math.cos(angle * 1.7) * ring * 0.42),
           y: height * (0.5 + Math.sin(angle) * ring * 0.58),
-          vx: Math.cos(angle * 2.3) * 0.12,
-          vy: Math.sin(angle * 1.9) * 0.12,
+          vx: Math.cos(angle * 2.3) * 0.2,
+          vy: Math.sin(angle * 1.9) * 0.2,
           pulse: (index % 13) / 13,
         };
       });
@@ -55,7 +56,9 @@ export function SignalField() {
 
     const draw = (time: number) => {
       context.clearRect(0, 0, width, height);
-      const t = time * 0.00035;
+      const t = time * 0.00052;
+      const delta = lastTime ? Math.min(2, (time - lastTime) / 16.67) : 1;
+      lastTime = time;
 
       const glow = context.createRadialGradient(
         width * 0.72,
@@ -74,8 +77,8 @@ export function SignalField() {
       for (let i = 0; i < nodes.length; i += 1) {
         const node = nodes[i];
         if (!reducedMotion) {
-          node.x += node.vx + Math.sin(t + i) * 0.035;
-          node.y += node.vy + Math.cos(t * 1.3 + i * 0.7) * 0.035;
+          node.x += (node.vx + Math.sin(t + i) * 0.055) * delta;
+          node.y += (node.vy + Math.cos(t * 1.3 + i * 0.7) * 0.055) * delta;
 
           if (pointer.active) {
             const dx = pointer.x - node.x;
@@ -99,7 +102,7 @@ export function SignalField() {
           const distance = Math.hypot(node.x - other.x, node.y - other.y);
           const threshold = width < 700 ? 105 : 138;
           if (distance < threshold) {
-            const alpha = (1 - distance / threshold) * 0.22;
+            const alpha = (1 - distance / threshold) * 0.3;
             context.strokeStyle = `rgba(111, 150, 244, ${alpha})`;
             context.lineWidth = 0.7;
             context.beginPath();
@@ -131,7 +134,7 @@ export function SignalField() {
       [92, 156, 228].forEach((radius, index) => {
         context.setLineDash(index % 2 === 0 ? [2, 9] : [1, 12]);
         context.beginPath();
-        context.ellipse(centerX, centerY, radius, radius * 0.68, t * (index + 1) * 0.17, 0, Math.PI * 2);
+        context.ellipse(centerX, centerY, radius, radius * 0.68, t * (index + 1) * 0.28, 0, Math.PI * 2);
         context.stroke();
       });
       context.setLineDash([]);
