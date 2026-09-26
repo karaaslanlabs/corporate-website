@@ -4,15 +4,15 @@ import type { Locale } from "@/lib/locale";
 const copy = {
   tr: {
     code: "07 / İLETİŞİM",
-    title: "Ciddi bir problem, yeni bir teknoloji girişimi veya iş birliği üzerine konuşabiliriz.",
-    intro: "Ürünler, yeni teknoloji girişimleri, iş birlikleri ve Karaaslan Labs ile ilgili kurumsal iletişim için:",
-    footer: "Ürünler · Sistemler · Yeni Teknoloji Girişimleri",
+    title: "Karaaslan Labs ile iletişim",
+    intro: "Kurumsal iletişim ve iş birliği talepleri için:",
+    footer: "Ürünler · Sistemler · Teknoloji Girişimleri",
   },
   en: {
     code: "07 / CONTACT",
-    title: "We can talk about a serious problem, a new technology venture, or a meaningful collaboration.",
-    intro: "For products, new technology ventures, collaborations, and corporate communication with Karaaslan Labs:",
-    footer: "Products · Systems · New Technology Ventures",
+    title: "Contact Karaaslan Labs",
+    intro: "For corporate enquiries and collaboration requests:",
+    footer: "Products · Systems · Technology Ventures",
   },
 } as const;
 
@@ -34,7 +34,6 @@ export function Contact({ locale }: { locale: Locale }) {
               <span>contact@karaaslanlabs.com</span><b aria-hidden="true">↗</b>
             </a>
             <div className="contact-next__links">
-              <a href="https://github.com/karaaslanlabs" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
               <a href="https://guvencheck.vercel.app/" target="_blank" rel="noopener noreferrer">GüvenCheck ↗</a>
             </div>
           </div>
@@ -42,7 +41,12 @@ export function Contact({ locale }: { locale: Locale }) {
       </section>
 
       <footer className="footer-next">
-        <Image src="/assets/brand/karaaslan-labs-lockup-reversed.svg" alt="Karaaslan Labs" width={690} height={180} />
+        <Image
+          src="/assets/brand/karaaslan-labs-lockup-reversed.svg"
+          alt="Karaaslan Labs"
+          width={690}
+          height={180}
+        />
         <span>{t.footer}</span>
         <span>© 2026 Karaaslan Labs</span>
       </footer>

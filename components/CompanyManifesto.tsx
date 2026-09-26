@@ -4,22 +4,22 @@ import type { Locale } from "@/lib/locale";
 const copy = {
   tr: {
     code: "06 / KARAASLAN LABS",
-    titleLead: "Tek bir ürün, sektör veya teknoloji trendiyle",
-    titleStrong: "tanımlanmıyoruz.",
+    title: "Karaaslan Labs hakkında",
+    lead:
+      "Karaaslan Labs, farklı problem alanlarında ürünler, yazılım sistemleri ve teknoloji girişimleri geliştiren bir teknoloji şirketidir.",
     body: [
-      "Karaaslan Labs, gerçek problemleri teknolojiyle çözen; ürünler, sistemler ve yeni girişimler geliştiren bir teknoloji şirketidir.",
-      "Bugün yazılım, yapay zekâ, otomasyon, araştırma ve ürün geliştirme kabiliyetlerini birlikte kullanıyoruz. Yarın anlamlı bir problem başka bir teknoloji ya da sektörde karşımıza çıkarsa, alanı değil prensiplerimizi sabit tutarız.",
-      "Amacımız daha fazla teknoloji kullanmak değil; daha doğru problemleri seçmek, daha güvenilir çözümler geliştirmek ve her çalışma döngüsünde üretme kapasitemizi artırmaktır.",
+      "Çalışma alanlarımız tek bir sektörle sınırlı değildir. Yeni bir alanı değerlendirirken kullanıcı ihtiyacını, teknik uygulanabilirliği ve sürdürülebilir iş modelini birlikte ele alırız.",
+      "Bir problem doğrulandığında, çözüm için gerekli teknoloji ve çalışma modelini ihtiyaca göre belirler; güvenilir ve sürdürülebilir bir yapı geliştirmeye odaklanırız.",
     ],
   },
   en: {
     code: "06 / KARAASLAN LABS",
-    titleLead: "We are not defined by a single product, industry,",
-    titleStrong: "or technology trend.",
+    title: "About Karaaslan Labs",
+    lead:
+      "Karaaslan Labs is a technology company that develops products, software systems, and technology ventures across different problem areas.",
     body: [
-      "Karaaslan Labs is a technology company that solves real problems through technology and builds products, systems, and new ventures.",
-      "Today we combine software, AI, automation, research, and product development capabilities. If a meaningful problem appears in another technology or industry tomorrow, we keep our principles fixed—not the category.",
-      "Our goal is not to use more technology. It is to choose better problems, build more reliable solutions, and increase the company’s ability to create with every working cycle.",
+      "Our work is not limited to a single industry. When evaluating a new area, we consider user need, technical feasibility, and a sustainable business model together.",
+      "Once a problem is validated, we determine the technology and working model required by the solution and focus on building a reliable, maintainable structure.",
     ],
   },
 } as const;
@@ -28,20 +28,20 @@ export function CompanyManifesto({ locale }: { locale: Locale }) {
   const t = copy[locale];
 
   return (
-    <section className="company-manifesto" id="sirket" aria-labelledby="company-manifesto-title">
-      <div className="company-manifesto__mark" aria-hidden="true">
+    <section className="company-story" id="sirket" aria-labelledby="company-story-title">
+      <div className="company-story__mark" aria-hidden="true">
         <span />
         <Image src="/assets/brand/karaaslan-labs-mark.svg" alt="" width={128} height={128} />
       </div>
-
-      <div className="company-manifesto__content">
+      <div className="company-story__content">
         <p className="section-code section-code--light">{t.code}</p>
-        <h2 id="company-manifesto-title">
-          {t.titleLead} <span>{t.titleStrong}</span>
-        </h2>
+        <h2 id="company-story-title">{t.title}</h2>
+        <p className="company-story__lead">{t.lead}</p>
 
-        <div className="company-manifesto__body">
-          {t.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        <div className="company-story__body">
+          {t.body.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </div>
       </div>
     </section>
