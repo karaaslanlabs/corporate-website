@@ -4,7 +4,6 @@ import { Hero } from "@/components/Hero";
 import { GuvenCheckStage } from "@/components/GuvenCheckStage";
 import { CapabilitySystem } from "@/components/CapabilitySystem";
 import { OperatingModel } from "@/components/OperatingModel";
-import { WorkEvidence } from "@/components/WorkEvidence";
 import { TechnologySystem } from "@/components/TechnologySystem";
 import { Principles } from "@/components/Principles";
 import { CompanyManifesto } from "@/components/CompanyManifesto";
@@ -24,7 +23,6 @@ export function HomeExperience({ locale }: { locale: Locale }) {
         <GuvenCheckStage locale={locale} />
         <CapabilitySystem locale={locale} />
         <OperatingModel locale={locale} />
-        <WorkEvidence locale={locale} />
         <TechnologySystem locale={locale} />
         <Principles locale={locale} />
         <CompanyManifesto locale={locale} />

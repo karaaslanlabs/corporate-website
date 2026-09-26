@@ -3,25 +3,25 @@ import type { Locale } from "@/lib/locale";
 
 const copy = {
   tr: {
-    code: "07 / KARAASLAN LABS",
-    title: "Karaaslan Labs neden var?",
+    code: "06 / KARAASLAN LABS",
+    title: "Karaaslan Labs hakkında",
     lead:
-      "Gerçek problemlere odaklanarak ürünler, sistemler ve yeni teknoloji girişimleri geliştirmek için.",
+      "Karaaslan Labs, farklı problem alanlarında ürünler, yazılım sistemleri ve teknoloji girişimleri geliştiren bir teknoloji şirketidir.",
     body: [
-      "Tek bir sektöre bağlı değiliz; yeni bir alana da yalnızca teknoloji ilginç olduğu için girmiyoruz. Önce gerçek ihtiyacı ve değer sinyalini arıyoruz.",
-      "Problem doğrulandığında uygun teknolojiyi, sistemi ve çalışma biçimini kuruyoruz. Gereksiz karmaşıklığı değil, güvenilir sonucu büyütmeye çalışıyoruz.",
-      "Bugün bu yaklaşımın görünür örneklerinden biri GüvenCheck. Karaaslan Labs büyüdükçe bu alan gerçek ürünler, araştırmalar ve açık çalışmalarla genişleyecek.",
+      "Çalışma alanlarımız tek bir sektörle sınırlı değildir. Yeni bir alanı değerlendirirken kullanıcı ihtiyacını, teknik uygulanabilirliği ve sürdürülebilir iş modelini birlikte ele alırız.",
+      "Bir problem doğrulandığında, çözüm için gerekli teknoloji ve çalışma modelini ihtiyaca göre belirleriz. Gereksiz teknik kapsamdan kaçınır; güvenilir ve sürdürülebilir bir yapı kurmaya odaklanırız.",
+      "GüvenCheck, bugün geliştirdiğimiz ürünlerden biridir. Şirketin ürün ve araştırma portföyü doğrulanan yeni çalışmalarla zaman içinde genişleyecektir.",
     ],
   },
   en: {
-    code: "07 / KARAASLAN LABS",
-    title: "Why does Karaaslan Labs exist?",
+    code: "06 / KARAASLAN LABS",
+    title: "About Karaaslan Labs",
     lead:
-      "To focus on real problems and build products, systems, and new technology ventures around them.",
+      "Karaaslan Labs is a technology company that develops products, software systems, and technology ventures across different problem areas.",
     body: [
-      "We are not tied to one industry, but we also do not enter a field simply because the technology is interesting. We look for a real need and a credible value signal first.",
-      "Once the problem is validated, we build the technology, system, and working model it actually needs. The goal is reliable outcomes, not unnecessary complexity.",
-      "GüvenCheck is one visible example of that approach today. As Karaaslan Labs grows, this surface will expand with real products, research, and public work.",
+      "Our work is not limited to a single industry. When evaluating a new area, we consider user need, technical feasibility, and a sustainable business model together.",
+      "Once a problem is validated, we determine the technology and working model required by the solution. We avoid unnecessary technical scope and focus on a reliable, maintainable structure.",
+      "GüvenCheck is one of the products we are developing today. The company’s product and research portfolio will expand over time as new work is validated.",
     ],
   },
 } as const;

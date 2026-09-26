@@ -7,26 +7,26 @@ import { useRef } from "react";
 const copy = {
   tr: {
     code: "03 / YAKLAŞIM",
-    title: "Önce doğru problemi anlarız, sonra gereken sistemi kurarız.",
+    title: "Çalışma yaklaşımımız",
     intro:
-      "Teknoloji bizim için amaç değil; doğru problemi çözmek, güvenilir sonuç üretmek ve sürdürülebilir değer oluşturmak için kullandığımız bir araçtır.",
+      "Çalışmayı dört aşamada yürütürüz: problemi ve bağlamı anlamak, temel varsayımları doğrulamak, uygun çözümü geliştirmek ve kullanım sonuçlarını izlemek.",
     steps: [
-      ["01", "Problemi Anla", "İhtiyacı, kullanım davranışını, mevcut çözümü ve beklenen sonucu anlamadan kapsamı büyütmeyiz."],
-      ["02", "Kanıtla", "Varsayımları mümkün olduğunca erken; gerçek kullanım, davranış, maliyet, gelir veya başka somut sinyallerle test ederiz."],
-      ["03", "İnşa Et", "Kanıtlanan ihtiyaca göre sade, sağlam ve geliştirilebilir bir ürün ya da sistem kurarız."],
-      ["04", "Ölç ve Güçlendir", "Çalışan çözümü ölçer, gereksiz karmaşıklığı azaltır ve gerçek kullanımda kanıtlanan kabiliyetleri yeniden kullanılabilir hale getiririz."],
+      ["01", "Problemi ve bağlamı anla", "İhtiyacı, mevcut çözümü, kullanıcı davranışını ve beklenen sonucu tanımlarız."],
+      ["02", "Varsayımları doğrula", "Kritik varsayımları kullanım, davranış, maliyet, gelir veya diğer ölçülebilir sinyallerle test ederiz."],
+      ["03", "Çözümü geliştir", "Doğrulanan ihtiyaca göre ürün, yazılım veya sistem geliştiririz."],
+      ["04", "Sonuçları izle", "Kullanım sonuçlarını izler; gerekli iyileştirmeleri veri ve gözleme göre yaparız."],
     ],
   },
   en: {
     code: "03 / APPROACH",
-    title: "We understand the right problem first, then build the system it needs.",
+    title: "Our working approach",
     intro:
-      "Technology is not the goal. It is a tool we use to solve the right problem, produce reliable outcomes, and create sustainable value.",
+      "We work in four stages: understand the problem and context, validate the key assumptions, develop the appropriate solution, and monitor the results in use.",
     steps: [
-      ["01", "Understand the Problem", "We do not expand scope before we understand the need, user behavior, existing solution, and expected outcome."],
-      ["02", "Validate", "We test assumptions as early as possible with real usage, behavior, cost, revenue, or other concrete signals."],
-      ["03", "Build", "Once the need is validated, we build a focused, robust, and evolvable product or system."],
-      ["04", "Measure and Strengthen", "We measure what works, remove unnecessary complexity, and turn proven capabilities into reusable building blocks."],
+      ["01", "Understand the problem and context", "We define the need, existing solution, user behavior, and expected outcome."],
+      ["02", "Validate assumptions", "We test critical assumptions with usage, behavior, cost, revenue, or other measurable signals."],
+      ["03", "Develop the solution", "We develop the product, software, or system required by the validated need."],
+      ["04", "Monitor outcomes", "We monitor usage outcomes and make improvements based on data and observation."],
     ],
   },
 } as const;

@@ -11,9 +11,9 @@ const copy = {
   tr: {
     meta: "TEKNOLOJİ ŞİRKETİ",
     labels: ["ÜRÜNLER", "SİSTEMLER", "ARAŞTIRMA", "YAPAY ZEKÂ / OTOMASYON"],
-    lines: ["Ürünler, sistemler", "ve yeni teknoloji", "girişimleri geliştiriyoruz."],
+    lines: ["Ürünler, sistemler", "ve teknoloji", "girişimleri geliştiriyoruz."],
     body:
-      "Karaaslan Labs; yazılım, yapay zekâ, otomasyon ve araştırma yetkinliklerini bir araya getirerek gerçek problemler üzerinde çalışan bir teknoloji şirketidir. Tek bir ürün, sektör ya da teknoloji trendiyle sınırlı değiliz. Değer üretebileceğimiz alanları araştırır, doğrular ve inşa ederiz.",
+      "Karaaslan Labs; yazılım, yapay zekâ, otomasyon ve araştırma yetkinliklerini ürün ve sistem geliştirme çalışmalarında bir araya getiren bir teknoloji şirketidir. Çalışma alanlarımız tek bir sektörle sınırlı değildir; yeni alanları kullanıcı ihtiyacı, teknik uygulanabilirlik ve sürdürülebilirlik açısından değerlendiririz.",
     primary: "GüvenCheck’i keşfet",
     secondary: "Nasıl çalışıyoruz",
     scroll: "KAYDIR / KEŞFET",
@@ -21,9 +21,9 @@ const copy = {
   en: {
     meta: "TECHNOLOGY COMPANY",
     labels: ["PRODUCTS", "SYSTEMS", "RESEARCH", "AI / AUTOMATION"],
-    lines: ["We build products,", "systems and new", "technology ventures."],
+    lines: ["We develop products,", "systems and", "technology ventures."],
     body:
-      "Karaaslan Labs is a technology company that brings together software, AI, automation, and research capabilities to work on real problems. We are not defined by a single product, industry, or technology trend. We research, validate, and build where we can create real value.",
+      "Karaaslan Labs is a technology company that combines software, AI, automation, and research capabilities in product and system development. Our work is not limited to a single industry; we evaluate new areas in terms of user need, technical feasibility, and long-term sustainability.",
     primary: "Explore GüvenCheck",
     secondary: "How we work",
     scroll: "SCROLL / EXPLORE",

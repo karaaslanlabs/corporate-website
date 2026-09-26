@@ -2,23 +2,23 @@ import type { Locale } from "@/lib/locale";
 
 const copy = {
   tr: {
-    code: "06 / ÇALIŞMA PRENSİPLERİ",
-    title: "Bizi hızdan önce disiplin tanımlar.",
+    code: "05 / ÇALIŞMA PRENSİPLERİ",
+    title: "Çalışma prensiplerimiz",
     items: [
-      ["01", "Kanıtlamadan ölçeklemeyiz", "Büyümeyi gerçek kullanım ve iş sonuçlarına dayandırırız."],
-      ["02", "Yalnızca gerektiği kadar karmaşık", "İhtiyaç olmayan sistemi sırf mümkün olduğu için eklemeyiz."],
-      ["03", "Güvenilirlik tasarımın parçasıdır", "Güvenlik, gizlilik, açıklık ve tutarlılığı baştan ele alırız."],
-      ["04", "Her döngüde daha yetenekli", "Kanıtlanan bilgi ve kabiliyetleri sonraki işe taşırız."],
+      ["01", "Doğrulamadan ölçeklemeyiz", "Kapsam ve yatırımı, kullanım ve iş sonuçları doğrulandıkça artırırız."],
+      ["02", "Gereksiz karmaşıklıktan kaçınırız", "İhtiyaç duymadığımız sistem ve özellikleri sırf mümkün oldukları için eklemeyiz."],
+      ["03", "Güvenilirliği baştan ele alırız", "Güvenlik, gizlilik, açıklık ve tutarlılığı tasarım ve geliştirme sürecinin parçası olarak değerlendiririz."],
+      ["04", "Öğrenilenleri yeniden kullanırız", "Gerçek çalışmalarda edinilen bilgi ve doğrulanan kabiliyetleri sonraki projelere taşırız."],
     ],
   },
   en: {
-    code: "06 / WORKING PRINCIPLES",
-    title: "Discipline matters before speed does.",
+    code: "05 / WORKING PRINCIPLES",
+    title: "Our working principles",
     items: [
-      ["01", "We do not scale before we validate", "Growth should be grounded in real usage and business outcomes."],
-      ["02", "Only as complex as necessary", "We do not add systems simply because they are possible."],
-      ["03", "Reliability is part of the design", "Security, privacy, clarity, and consistency start with the design."],
-      ["04", "More capable after every cycle", "Proven knowledge and capabilities carry into the next piece of work."],
+      ["01", "We do not scale before validation", "We increase scope and investment as usage and business outcomes are validated."],
+      ["02", "We avoid unnecessary complexity", "We do not add systems or features simply because they are possible."],
+      ["03", "We address reliability from the start", "Security, privacy, clarity, and consistency are considered throughout design and development."],
+      ["04", "We reuse what we learn", "Knowledge and proven capabilities from real work carry into subsequent projects."],
     ],
   },
 } as const;

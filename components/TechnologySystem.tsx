@@ -2,29 +2,29 @@ import type { Locale } from "@/lib/locale";
 
 const copy = {
   tr: {
-    code: "05 / TEKNOLOJİ",
-    title: "Teknoloji bizim için amaç değil, kaldıraçtır.",
+    code: "04 / TEKNOLOJİ",
+    title: "Teknoloji yaklaşımımız",
     body:
-      "Yazılım, yapay zekâ, otomasyon ve araştırma sistemlerini yalnızca probleme gerçek bir avantaj sağladıkları yerde kullanıyoruz. Gereken yerde insan kararı ve kontrolü sistemin içinde kalır.",
+      "Yazılım, yapay zekâ, otomasyon ve araştırma araçlarını ihtiyaca göre seçeriz. Teknoloji seçiminde güvenilirlik, bakım maliyeti, açıklık ve insan kontrolü gereksinimlerini birlikte değerlendiririz.",
     modules: [
       "Yazılım Mühendisliği",
       "Yapay Zekâ",
       "Otomasyon",
       "Araştırma Sistemleri",
-      "Orkestrasyon",
+      "Entegrasyon ve Orkestrasyon",
     ],
   },
   en: {
-    code: "05 / TECHNOLOGY",
-    title: "Technology is leverage, not the objective.",
+    code: "04 / TECHNOLOGY",
+    title: "Our technology approach",
     body:
-      "We use software, AI, automation, and research systems where they create a real advantage for the problem at hand. Human judgment and control remain inside the system where they matter.",
+      "We select software, AI, automation, and research tools according to the need. Technology choices are evaluated in terms of reliability, maintenance cost, transparency, and requirements for human control.",
     modules: [
       "Software Engineering",
       "Artificial Intelligence",
       "Automation",
       "Research Systems",
-      "Orchestration",
+      "Integration and Orchestration",
     ],
   },
 } as const;
