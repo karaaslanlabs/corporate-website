@@ -101,7 +101,7 @@ export function Hero({ locale }: { locale: Locale }) {
           <p>{t.body}</p>
 
           <div className="hero-next__actions">
-            <a className="signal-link" href="#guncel-calisma">
+            <a className="signal-link signal-link--primary" href="#guncel-calisma">
               <span>{t.primary}</span>
               <b aria-hidden="true">↘</b>
             </a>
