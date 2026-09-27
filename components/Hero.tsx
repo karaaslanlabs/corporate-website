@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import type { Locale } from "@/lib/locale";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { SignalField } from "./SignalField";
 
 const lineEase = [0.22, 1, 0.36, 1] as const;
@@ -31,7 +31,6 @@ const copy = {
 } as const;
 
 export function Hero({ locale }: { locale: Locale }) {
-  const reduce = useReducedMotion();
   const t = copy[locale];
 
   return (
@@ -63,7 +62,7 @@ export function Hero({ locale }: { locale: Locale }) {
       <div className="hero-next__content">
         <motion.div
           className="hero-next__meta"
-          initial={reduce ? false : { opacity: 0, y: 12 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.08 }}
         >
@@ -79,7 +78,7 @@ export function Hero({ locale }: { locale: Locale }) {
               key={line}
             >
               <motion.span
-                initial={reduce ? false : { y: "115%", opacity: 0 }}
+                initial={false}
                 animate={{ y: "0%", opacity: 1 }}
                 transition={{
                   duration: 0.78,
@@ -95,7 +94,7 @@ export function Hero({ locale }: { locale: Locale }) {
 
         <motion.div
           className="hero-next__bottom"
-          initial={reduce ? false : { opacity: 0, y: 18 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.55 }}
         >

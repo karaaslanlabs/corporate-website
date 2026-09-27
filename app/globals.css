@@ -3373,3 +3373,25 @@ section[id] { scroll-margin-top: 80px; }
   .principles-compact__grid article:hover,
   .contact-next__mail:hover { transform:none; }
 }
+
+/* Corporate Website v2.2.1 — render-safe optical correction */
+@media (min-width: 901px) {
+  .hero-next h1 {
+    width: min(1040px, 72vw);
+    font-size: clamp(60px, 7.15vw, 116px);
+    line-height: .88;
+  }
+
+  .capability-system__intro {
+    padding-top: clamp(108px, 9vw, 145px);
+    padding-bottom: clamp(72px, 6.5vw, 104px);
+  }
+
+  .capability-step {
+    min-height: 52svh;
+    padding-block: 50px;
+  }
+
+  .capability-system__steps { padding-bottom: 12vh; }
+  .operating-model { padding: clamp(96px, 7vw, 128px) 0; }
+}
