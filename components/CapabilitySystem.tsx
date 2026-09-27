@@ -1,7 +1,7 @@
 "use client";
 
 import type { Locale } from "@/lib/locale";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { Fragment, useEffect, useRef, useState } from "react";
 
 const capabilityCopy = {
@@ -133,13 +133,12 @@ function SurfaceShell({ mode, locale, children }: { mode: string; locale: Locale
 
 function VentureSurface({ locale }: { locale: Locale }) {
   const t = visualCopy[locale].venture;
-  const reduce = useReducedMotion();
   const icons: IconName[] = ["need", "evidence", "product"];
   return (
     <SurfaceShell mode={t.mode} locale={locale}>
       <div className="visual-story visual-story--venture">
         {t.stages.map((stage, index) => (
-          <motion.div key={stage} className={`visual-stage visual-stage--${index + 1}`} initial={reduce ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * .12 }}>
+          <motion.div key={stage} className={`visual-stage visual-stage--${index + 1}`} initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * .12 }}>
             <div className="visual-stage__icon"><VisualIcon name={icons[index]} /></div>
             <small>0{index + 1}</small><strong>{stage}</strong><span>{t.notes[index]}</span>
             {index < 2 && <i className="visual-story__arrow" aria-hidden="true">→</i>}
@@ -153,13 +152,12 @@ function VentureSurface({ locale }: { locale: Locale }) {
 }
 function SystemsSurface({ locale }: { locale: Locale }) {
   const t = visualCopy[locale].systems;
-  const reduce = useReducedMotion();
   return (
     <SurfaceShell mode={t.mode} locale={locale}>
       <div className="visual-story visual-story--systems">
         <div className="systems-main-flow">
           {["user", "app", "result"].map((name, index) => (
-            <motion.div key={name} className={`system-story-card system-story-card--${index + 1}`} initial={reduce ? false : { opacity: 0, scale: .92 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: index * .1 }}>
+            <motion.div key={name} className={`system-story-card system-story-card--${index + 1}`} initial={false} animate={{ opacity: 1, scale: 1 }} transition={{ delay: index * .1 }}>
               <div className="system-story-card__icon"><VisualIcon name={name as IconName} /></div>
               <strong>{t.main[index]}</strong>
               {index < 2 && <i aria-hidden="true">→</i>}
@@ -180,14 +178,13 @@ function SystemsSurface({ locale }: { locale: Locale }) {
 
 function AISurface({ locale }: { locale: Locale }) {
   const t = visualCopy[locale].ai;
-  const reduce = useReducedMotion();
   const icons: IconName[] = ["request", "ai", "human", "result"];
   return (
     <SurfaceShell mode={t.mode} locale={locale}>
       <div className="visual-story visual-story--ai">
         <div className="ai-main-flow">
           {t.main.map((label, index) => (
-            <motion.div key={label} className={`ai-story-card ai-story-card--${index + 1}`} initial={reduce ? false : { opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * .1 }}>
+            <motion.div key={label} className={`ai-story-card ai-story-card--${index + 1}`} initial={false} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * .1 }}>
               <div className="ai-story-card__icon"><VisualIcon name={icons[index]} /></div><strong>{label}</strong>
               {index < 3 && <i aria-hidden="true">→</i>}
             </motion.div>
@@ -201,11 +198,10 @@ function AISurface({ locale }: { locale: Locale }) {
 }
 function ResearchSurface({ locale }: { locale: Locale }) {
   const t = visualCopy[locale].research;
-  const reduce = useReducedMotion();
   return (
     <SurfaceShell mode={t.mode} locale={locale}>
       <div className="visual-story visual-story--research">
-        <motion.div className="research-question" initial={reduce ? false : { opacity: 0, x: -14 }} animate={{ opacity: 1, x: 0 }}>
+        <motion.div className="research-question" initial={false} animate={{ opacity: 1, x: 0 }}>
           <div className="research-question__icon"><VisualIcon name="question" /></div><small>01</small><strong>{t.question}</strong>
         </motion.div>
         <div className="research-lens" aria-hidden="true"><VisualIcon name="evidence" /><i /><i /><i /></div>
@@ -213,7 +209,7 @@ function ResearchSurface({ locale }: { locale: Locale }) {
           {t.evidence.map((item, index) => <div key={item}><span>{item}</span><i><em style={{ width: ["82%", "58%", "36%"][index] }} /></i></div>)}
         </div>
         <div className="research-decisions">
-          {t.decisions.map((decision, index) => <motion.div key={decision} className={`research-decision research-decision--${index + 1}`} initial={reduce ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .18 + index * .08 }}><VisualIcon name="decision" /><span>{decision}</span></motion.div>)}
+          {t.decisions.map((decision, index) => <motion.div key={decision} className={`research-decision research-decision--${index + 1}`} initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: .18 + index * .08 }}><VisualIcon name="decision" /><span>{decision}</span></motion.div>)}
         </div>
         <p className="visual-story__summary">{t.summary}</p>
       </div>

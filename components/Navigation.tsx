@@ -36,6 +36,7 @@ const labels = {
 export function Navigation({ locale }: { locale: Locale }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [lightSurface, setLightSurface] = useState(false);
   const copy = labels[locale];
 
   useEffect(() => {
@@ -43,6 +44,27 @@ export function Navigation({ locale }: { locale: Locale }) {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onSurfaceChange = () => {
+      const sampleY = 70;
+      const selectors = ["#alanlar", "#yaklasim", ".principles-compact"];
+      const isLight = selectors.some((selector) => {
+        const element = document.querySelector<HTMLElement>(selector);
+        if (!element) return false;
+        const rect = element.getBoundingClientRect();
+        return rect.top <= sampleY && rect.bottom > sampleY;
+      });
+      setLightSurface(isLight);
+    };
+    onSurfaceChange();
+    window.addEventListener("scroll", onSurfaceChange, { passive: true });
+    window.addEventListener("resize", onSurfaceChange);
+    return () => {
+      window.removeEventListener("scroll", onSurfaceChange);
+      window.removeEventListener("resize", onSurfaceChange);
+    };
   }, []);
 
   useEffect(() => {
@@ -62,11 +84,13 @@ export function Navigation({ locale }: { locale: Locale }) {
     setOpen(false);
   };
 
+  const lightNav = lightSurface && !open;
+
   return (
-    <header className={`nav-shell ${scrolled || open ? "nav-shell--active" : ""}`}>
+    <header className={`nav-shell ${scrolled || open ? "nav-shell--active" : ""} ${lightNav ? "nav-shell--light" : ""}`}>
       <a className="nav-brand" href="#top" aria-label={copy.home}>
         <Image
-          src="/assets/brand/karaaslan-labs-lockup-reversed.svg"
+          src={lightNav ? "/assets/brand/karaaslan-labs-lockup.svg" : "/assets/brand/karaaslan-labs-lockup-reversed.svg"}
           alt="Karaaslan Labs"
           width={690}
           height={180}
