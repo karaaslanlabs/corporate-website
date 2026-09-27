@@ -1,6 +1,8 @@
 # Karaaslan Labs — Corporate Website
 
-Karaaslan Labs kurumsal web sitesi.
+Official source for [karaaslanlabs.com](https://karaaslanlabs.com), the corporate website of Karaaslan Labs — a technology company developing products, software systems, and new technology ventures.
+
+The site presents the company, its current product work, its working model, and its broader technology-company positioning in Turkish and English.
 
 ## Current architecture
 
