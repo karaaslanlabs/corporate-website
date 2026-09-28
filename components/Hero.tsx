@@ -9,21 +9,21 @@ const lineEase = [0.22, 1, 0.36, 1] as const;
 
 const copy = {
   tr: {
-    meta: "TEKNOLOJİ ŞİRKETİ",
+    meta: "TEKNOLOJİ GİRİŞİMİ",
     labels: ["ÜRÜNLER", "SİSTEMLER", "ARAŞTIRMA", "YAPAY ZEKÂ / OTOMASYON"],
     lines: ["Ürünler, sistemler", "ve teknoloji", "girişimleri geliştiriyoruz."],
     body:
-      "Karaaslan Labs; yazılım, yapay zekâ, otomasyon ve araştırma yetkinliklerini ürün ve sistem geliştirme süreçlerinde bir araya getiren bir teknoloji şirketidir. Çalışma alanlarımız tek bir sektörle sınırlı değildir; yeni alanları kullanıcı ihtiyacı, teknik uygulanabilirlik ve sürdürülebilirlik açısından değerlendiririz.",
+      "Karaaslan Labs; yazılım, yapay zekâ, otomasyon ve araştırma yetkinliklerini ürün ve sistem geliştirme süreçlerinde bir araya getirir. Çalışma alanlarımız tek bir sektörle sınırlı değildir; yeni alanları kullanıcı ihtiyacı, teknik uygulanabilirlik ve sürdürülebilirlik açısından değerlendiririz.",
     primary: "GüvenCheck’i keşfet",
     secondary: "Nasıl çalışıyoruz",
     scroll: "KAYDIR / KEŞFET",
   },
   en: {
-    meta: "TECHNOLOGY COMPANY",
+    meta: "TECHNOLOGY VENTURE",
     labels: ["PRODUCTS", "SYSTEMS", "RESEARCH", "AI / AUTOMATION"],
     lines: ["We develop products,", "systems and", "technology ventures."],
     body:
-      "Karaaslan Labs is a technology company that combines software, AI, automation, and research capabilities in product and system development. Our work is not limited to a single industry; we evaluate new areas in terms of user need, technical feasibility, and long-term sustainability.",
+      "Karaaslan Labs brings together software, AI, automation, and research capabilities in product and system development. Our work is not limited to a single industry; we evaluate new areas in terms of user need, technical feasibility, and long-term sustainability.",
     primary: "Explore GüvenCheck",
     secondary: "How we work",
     scroll: "SCROLL / EXPLORE",
@@ -101,7 +101,7 @@ export function Hero({ locale }: { locale: Locale }) {
           <p>{t.body}</p>
 
           <div className="hero-next__actions">
-            <a className="signal-link" href="#guncel-calisma">
+            <a className="signal-link signal-link--primary" href="#guncel-calisma">
               <span>{t.primary}</span>
               <b aria-hidden="true">↘</b>
             </a>

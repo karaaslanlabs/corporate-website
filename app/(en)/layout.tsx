@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://karaaslanlabs.com"),
   title: "Karaaslan Labs — Products, systems and new technology ventures",
   description:
-    "Karaaslan Labs is a technology company that brings together software, AI, automation, and research capabilities to build products, systems, and new technology ventures.",
+    "Karaaslan Labs brings together software, AI, automation, and research capabilities to build products, systems, and new technology ventures.",
   alternates: {
     canonical: "/en/",
     languages: {

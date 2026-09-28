@@ -260,6 +260,8 @@ section[id] { scroll-margin-top: 80px; }
 }
 .hero-next__line > span { display: block; padding-top: .015em; }
 
+.hero-next__line--outline { overflow: visible; }
+
 .hero-next__line--outline > span {
   color: transparent;
   -webkit-text-stroke: 1.25px rgba(168,191,247,.78);
@@ -3442,4 +3444,34 @@ section[id] { scroll-margin-top: 80px; }
 @media (max-width: 620px) {
   .guven-stage::after { height: 42px; }
   .footer-next { padding-top: 42px; padding-bottom: 46px; }
+}
+
+/* Corporate Website v2.2.2 — hero primary CTA emphasis */
+.signal-link--primary {
+  gap: 14px;
+  padding: 11px 14px 11px 16px;
+  border: 1px solid rgba(111,150,244,.28);
+  border-radius: 999px;
+  background: linear-gradient(135deg,rgba(37,99,235,.22),rgba(56,189,248,.06));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 12px 30px rgba(0,0,0,.12);
+  transition: border-color .24s ease, background .24s ease, box-shadow .24s ease;
+}
+.signal-link--primary b {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(111,150,244,.12);
+}
+@media (hover:hover) {
+  .signal-link--primary:hover {
+    border-color: rgba(111,150,244,.48);
+    background: linear-gradient(135deg,rgba(37,99,235,.30),rgba(56,189,248,.09));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.10), 0 16px 36px rgba(0,0,0,.16);
+  }
+  .signal-link--primary:hover b { transform: translate(2px,2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .signal-link--primary:hover b { transform: none; }
 }
